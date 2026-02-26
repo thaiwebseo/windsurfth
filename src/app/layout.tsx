@@ -4,6 +4,7 @@ import "./globals.css";
 import { HeaderNav } from "@/components/HeaderNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteUrl } from "@/lib/site-config";
 
 const prompt = Prompt({
   variable: "--font-prompt",
@@ -16,11 +17,11 @@ export const metadata: Metadata = buildPageMetadata({
   description: "Windsurf IDE คือ AI coding assistant ที่ทรงพลังที่สุด พร้อม 250 เครดิตฟรีเมื่อสมัครแพ็คเกจ Pro ขึ้นไป",
   keywords: ["windsurf ไทย", "สมัคร windsurf", "ai ide ภาษาไทย"],
   metadata: {
-    metadataBase: new URL("https://windsurfth.com"),
+    metadataBase: new URL(siteUrl),
     openGraph: {
       title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะ",
       description: "AI coding assistant ที่ทรงพลังที่สุด พร้อม 250 เครดิตฟรี",
-      url: "https://windsurfth.com",
+      url: siteUrl,
       siteName: "Windsurf Thailand",
       locale: "th_TH",
       type: "website",

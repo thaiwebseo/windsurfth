@@ -1,9 +1,11 @@
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import { Share2 } from "lucide-react"
 import { blogPosts } from "@/content/blogs"
 import { CTAButton } from "@/components/CTAButton"
 import { buildBlogMetadata } from "@/lib/seo"
+import { siteUrl } from "@/lib/site-config"
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }))
@@ -19,6 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     })
   }
 
+  const coverUrl = new URL(post.coverImage, siteUrl).toString()
+
   return buildBlogMetadata({
     title: `${post.title} | Windsurf Blog`,
     description: post.excerpt,
@@ -27,7 +31,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       openGraph: {
         title: post.title,
         description: post.excerpt,
-        images: [post.coverImage],
+        images: [
+          {
+            url: coverUrl,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.excerpt,
+        images: [coverUrl],
       },
     },
   })
@@ -40,6 +57,24 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   if (!post) {
     return notFound()
   }
+
+  const canonicalUrl = new URL(`/blog/${post.slug}`, siteUrl).toString()
+  const encodedUrl = encodeURIComponent(canonicalUrl)
+  const encodedText = encodeURIComponent(post.title)
+  const shareLinks = [
+    {
+      label: "Facebook",
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    },
+    {
+      label: "Twitter/X",
+      href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`,
+    },
+    {
+      label: "LinkedIn",
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    },
+  ]
 
   return (
     <main className="bg-white py-20">
@@ -87,6 +122,26 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             </CTAButton>
           </div>
         )}
+
+        <section className="flex flex-col items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-2 font-medium text-gray-900">
+            <Share2 className="w-4 h-4" />
+            แชร์บทความนี้
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {shareLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full border border-gray-200 text-gray-700 hover:border-orange-400 hover:text-orange-500 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </section>
       </article>
     </main>
   )
