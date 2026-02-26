@@ -19,6 +19,11 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: ["windsurf ไทย", "สมัคร windsurf", "ai ide ภาษาไทย"],
   metadata: {
     metadataBase: new URL(siteUrl),
+    icons: {
+      icon: "/images/icons/favicon.png",
+      shortcut: "/images/icons/favicon.png",
+      apple: "/images/icons/favicon.png",
+    },
     openGraph: {
       title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะ",
       description: "AI coding assistant ที่ทรงพลังที่สุด พร้อม 250 เครดิตฟรี",
