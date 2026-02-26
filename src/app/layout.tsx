@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { HeaderNav } from "@/components/HeaderNav";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -39,12 +40,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-BE3TPETJ76";
   return (
     <html lang="th">
       <body className={`${prompt.variable} font-sans antialiased bg-white`}>
         <HeaderNav />
         {children}
         <SiteFooter />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

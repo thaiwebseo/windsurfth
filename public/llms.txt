@@ -1,0 +1,54 @@
+############################################################
+# นโยบายสำหรับ Crawler / LLM ของ windsufth.com (ภาษาไทย)
+# ติดต่อทีม: team@windsurfth.ai | ปรับปรุงล่าสุด: 26 ก.พ. 2026
+############################################################
+
+# เนื้อหาที่อนุญาตให้อ่านและสรุป (เน้นว่าบทความเป็นภาษาไทย)
+User-agent: *
+Allow: /
+Allow: /features
+Allow: /pricing
+Allow: /blog
+Allow: /blog/
+
+# เส้นทางที่ห้ามรวบรวม เก็บ หรือใช้เทรนโมเดล
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /account
+Disallow: /admin
+Disallow: /settings
+Disallow: /_next/
+Disallow: /static/
+
+# เงื่อนไขการใช้งาน (ภาษาไทย)
+Policy: ใช้ข้อมูลเพื่อการทำดัชนี ค้นหา หรือสร้างสรุปสั้น ๆ พร้อมลิงก์กลับมายัง https://windsurfth.com เท่านั้น
+Policy: ห้ามสร้าง dataset ใหม่ ฝึกหรือ fine-tune โมเดล โดยคัดลอกเนื้อหาเว็บไซต์เป็นจำนวนมากโดยไม่ได้รับอนุญาต
+Policy: ห้ามเก็บข้อมูลส่วนบุคคล ฟอร์ม หรือข้อมูลที่สามารถระบุตัวบุคคลได้
+Policy: ต้องระบุที่มาว่าเป็น "Windsurf Thailand" ทุกครั้งเมื่อนำสรุปไปใช้งานสาธารณะ
+
+############################################################
+# LLM Crawler Policy for windsufth.com (English)
+# Contact: team@windsurfth.ai | Last updated: 2026-02-26
+############################################################
+
+User-agent: *
+Allow: /
+Allow: /features
+Allow: /pricing
+Allow: /blog
+Allow: /blog/
+
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /account
+Disallow: /admin
+Disallow: /settings
+Disallow: /_next/
+Disallow: /static/
+
+Policy: Content may be used for search indexing, snippet previews, or linking back to https://windsurfth.com (Thai-language site) only.
+Policy: Do not create derivative datasets, fine-tune, or commercially redistribute substantial portions without written approval.
+Policy: Do not store form submissions, user data, or any personally identifiable information.
+Policy: Attribute summaries to "Windsurf Thailand" wherever they appear.
+
+Header: X-LLM-Policy: https://windsurfth.com/llms.txt
