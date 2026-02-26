@@ -22,15 +22,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const coverUrl = new URL(post.coverImage, siteUrl).toString()
+  const canonical = new URL(`/blog/${post.slug}`, siteUrl).toString()
 
   return buildBlogMetadata({
     title: `${post.title} | Windsurf Blog`,
     description: post.excerpt,
     tags: post.tags,
     metadata: {
+      alternates: {
+        canonical,
+      },
       openGraph: {
         title: post.title,
         description: post.excerpt,
+        type: "article",
+        url: canonical,
+        publishedTime: post.publishedAt,
         images: [
           {
             url: coverUrl,
@@ -59,6 +66,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   }
 
   const canonicalUrl = new URL(`/blog/${post.slug}`, siteUrl).toString()
+  const coverUrl = new URL(post.coverImage, siteUrl).toString()
   const encodedUrl = encodeURIComponent(canonicalUrl)
   const encodedText = encodeURIComponent(post.title)
   const shareLinks = [
@@ -75,6 +83,29 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     },
   ]
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: [coverUrl],
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: post.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Windsurf Thailand",
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/images/icons/windsurf-black-wordmark.svg", siteUrl).toString(),
+      },
+    },
+    mainEntityOfPage: canonicalUrl,
+  }
 
   return (
     <main className="bg-white py-20">
@@ -93,7 +124,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         </header>
 
         <div className="relative w-full h-96 rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
-          <Image src={post.coverImage} alt={post.title} fill className="object-cover" priority />
+          <Image
+            src={post.coverImage}
+            alt={`${post.title} - ภาพประกอบบทความ Windsurf`}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         <section className="space-y-10 text-gray-700">
@@ -142,6 +179,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             ))}
           </div>
         </section>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
       </article>
     </main>
   )

@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Hero } from "@/components/Hero";
-import { CTAButton } from "@/components/CTAButton";
 import {
   type LucideIcon,
   Zap,
@@ -16,6 +14,9 @@ import {
   Rocket,
   Layers3,
 } from "lucide-react";
+import { Hero } from "@/components/Hero";
+import { CTAButton } from "@/components/CTAButton";
+import { siteUrl } from "@/lib/site-config";
 
 const stats = [
   { label: "นักพัฒนาไทยใช้งาน", value: "15,000+" },
@@ -114,7 +115,22 @@ const faqs = [
     q: "เครดิต 250 ใช้ทำอะไรได้?",
     a: "เครดิตเทียบเท่าเวลาการใช้งานแพ็คเกจ Pro ประมาณ 2-3 สัปดาห์ สามารถใช้เปิดโควต้า AI command แบบเต็ม",
   },
-];
+]
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+  mainEntityOfPage: `${siteUrl}/#faq`,
+}
+;
 
 const testimonialRows = {
   top: [
@@ -469,6 +485,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </main>
   );
 }

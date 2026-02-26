@@ -4,12 +4,33 @@ import type { Metadata } from "next"
 import { blogPosts } from "@/content/blogs"
 import { BlogCard } from "@/components/BlogCard"
 import { buildPageMetadata } from "@/lib/seo"
+import { siteUrl } from "@/lib/site-config"
+
+const canonical = new URL("/blog", siteUrl).toString()
+const ogImage = new URL("/images/hero/Windsurf%20AI%20IDE.png", siteUrl).toString()
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Windsurf Blog | อัปเดต AI IDE ภาษาไทย",
   description:
     "ติดตามข่าวสารและคู่มือการใช้ Windsurf IDE ภาษาไทย ทั้งอัปเดตโมเดลใหม่ เทคนิคการสั่งงานเอเจนต์ และเคสจากทีมไทย",
   keywords: ["windsurf blog", "ข่าว windsuf", "gemini 3.1 pro"],
+  metadata: {
+    alternates: { canonical },
+    openGraph: {
+      url: canonical,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Windsurf Blog รวมบทความภาษาไทย",
+        },
+      ],
+    },
+    twitter: {
+      images: [ogImage],
+    },
+  },
 })
 
 export default function BlogPage() {

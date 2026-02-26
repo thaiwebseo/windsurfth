@@ -1,11 +1,32 @@
 import { Metadata } from "next"
 import { CTAButton } from "@/components/CTAButton"
 import { buildPageMetadata } from "@/lib/seo"
+import { siteUrl } from "@/lib/site-config"
+
+const canonical = new URL("/features", siteUrl).toString()
+const ogImage = new URL("/images/hero/Windsurf%20AI%20IDE.png", siteUrl).toString()
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Windsurf Features | ฟีเจอร์และ AI Flows แบบจัดเต็ม",
   description: "สำรวจฟีเจอร์ Windsurf IDE, AI pair programming, Fast Context และ workflow automation สำหรับทีมไทย",
   keywords: ["windsurf features", "ai flows", "pair programming", "fast context"],
+  metadata: {
+    alternates: { canonical },
+    openGraph: {
+      url: canonical,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "ภาพรวม Windsurf Features",
+        },
+      ],
+    },
+    twitter: {
+      images: [ogImage],
+    },
+  },
 })
 
 const featureHighlights = [

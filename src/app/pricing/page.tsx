@@ -3,12 +3,33 @@ import Image from "next/image"
 import { PricingCard } from "@/components/PricingCard"
 import { CTAButton } from "@/components/CTAButton"
 import { buildPageMetadata } from "@/lib/seo"
+import { siteUrl } from "@/lib/site-config"
+
+const canonical = new URL("/pricing", siteUrl).toString()
+const ogImage = new URL("/images/hero/Windsurf%20AI%20IDE.png", siteUrl).toString()
 
 export const metadata: Metadata = buildPageMetadata({
   title: "แพ็คเกจ Windsurf Pro | ราคาพร้อมทดลองฟรี",
   description:
     "เปรียบเทียบแพ็คเกจ Windsurf IDE ทั้ง Free, Pro และ Teams พร้อมทดลองฟรี 14 วันและรับ 250 เครดิตเพิ่มเมื่อสมัคร",
   keywords: ["windsurf ราคา", "windsurf pro ราคา", "สมัคร windsurf teams"],
+  metadata: {
+    alternates: { canonical },
+    openGraph: {
+      url: canonical,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "ตารางราคา Windsurf Pro",
+        },
+      ],
+    },
+    twitter: {
+      images: [ogImage],
+    },
+  },
 })
 
 const planData = [
