@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { Cookie, ShieldCheck, BarChart3, Megaphone, ChevronDown, X } from "lucide-react"
+import { Cookie, ShieldCheck, BarChart3, Megaphone, X } from "lucide-react"
 
 const CONSENT_KEY = "windsurf-cookie-consent"
 
@@ -70,7 +70,7 @@ export function CookieBanner() {
   return (
     <>
       {isOpen ? (
-        <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center px-4 py-6">
+        <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center px-3 py-4 sm:px-4 sm:py-6">
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             aria-hidden
@@ -79,7 +79,7 @@ export function CookieBanner() {
               setShowDetails(false)
             }}
           />
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-[slide-up_0.35s_ease]">
+          <div className="relative w-full max-w-2xl md:max-w-3xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-[slide-up_0.35s_ease]">
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
               aria-label="ปิดแบนเนอร์คุกกี้"
@@ -91,15 +91,15 @@ export function CookieBanner() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="px-6 pt-6 pb-4">
-              <div className="flex items-start gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center text-white shadow-lg">
+            <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-4 sm:pb-6">
+              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center text-white shadow-lg">
                   <Cookie className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-sm uppercase tracking-[0.35em] text-orange-500 mb-2">Cookies</p>
-                  <h2 className="text-2xl font-bold text-gray-900">จัดการการอนุญาตใช้งานคุกกี้</h2>
-                  <p className="text-sm text-gray-600 mt-3 leading-relaxed">
+                  <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-orange-500 mb-2">Cookies</p>
+                  <h2 className="text-[1.45rem] sm:text-2xl font-bold text-gray-900">จัดการการอนุญาตใช้งานคุกกี้</h2>
+                  <p className="text-xs sm:text-sm text-gray-600 mt-3 leading-relaxed">
                     เว็บไซต์นี้ใช้คุกกี้เพื่อให้คุณได้รับประสบการณ์ที่ราบรื่น วิเคราะห์การใช้งาน และปรับคอนเทนต์ให้เหมาะสม
                     อ่านเพิ่มเติมได้ที่นโยบายการใช้คุกกี้และนโยบายความเป็นส่วนตัวของเรา
                   </p>
@@ -107,21 +107,21 @@ export function CookieBanner() {
               </div>
 
               {!showDetails && (
-                <div className="flex flex-wrap gap-3 mt-6">
+                <div className="flex flex-col sm:flex-row gap-3 mt-6">
                   <button
-                    className="flex-1 min-w-[140px] bg-orange-500 text-white font-semibold py-3 rounded-2xl shadow-lg shadow-orange-200 hover:bg-orange-600 transition"
+                    className="w-full sm:flex-1 bg-orange-500 text-white font-semibold py-3 rounded-2xl shadow-lg shadow-orange-200 hover:bg-orange-600 transition"
                     onClick={handleAcceptAll}
                   >
                     ยอมรับทั้งหมด
                   </button>
                   <button
-                    className="flex-1 min-w-[140px] border border-gray-200 text-gray-700 font-semibold py-3 rounded-2xl hover:bg-gray-50 transition"
+                    className="w-full sm:flex-1 border border-gray-200 text-gray-700 font-semibold py-3 rounded-2xl hover:bg-gray-50 transition"
                     onClick={handleReject}
                   >
                     ปฏิเสธ
                   </button>
                   <button
-                    className="flex-1 min-w-[140px] border border-gray-200 text-gray-600 font-semibold py-3 rounded-2xl hover:bg-gray-50 transition"
+                    className="w-full sm:flex-1 border border-gray-200 text-gray-600 font-semibold py-3 rounded-2xl hover:bg-gray-50 transition"
                     onClick={() => setShowDetails(true)}
                   >
                     ดูรายละเอียด
@@ -153,15 +153,15 @@ export function CookieBanner() {
                     onToggle={() => toggleSwitch("marketing")}
                   />
 
-                  <div className="flex flex-wrap gap-3 pt-2">
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
                     <button
-                      className="flex-1 min-w-[140px] bg-orange-500 text-white font-semibold py-3 rounded-2xl shadow-lg shadow-orange-200 hover:bg-orange-600 transition"
+                      className="w-full sm:flex-1 bg-orange-500 text-white font-semibold py-3 rounded-2xl shadow-lg shadow-orange-200 hover:bg-orange-600 transition"
                       onClick={handleAcceptAll}
                     >
                       ยอมรับทั้งหมด
                     </button>
                     <button
-                      className="flex-1 min-w-[140px] border border-gray-200 text-gray-700 font-semibold py-3 rounded-2xl hover:bg-gray-50 transition"
+                      className="w-full sm:flex-1 border border-gray-200 text-gray-700 font-semibold py-3 rounded-2xl hover:bg-gray-50 transition"
                       onClick={handleSaveCustom}
                     >
                       บันทึกการตั้งค่า
@@ -179,7 +179,7 @@ export function CookieBanner() {
         </div>
       ) : (
         <button
-          className="fixed bottom-4 left-4 z-40 bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg border border-gray-200 text-sm font-semibold hover:shadow-xl transition"
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-40 bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg border border-gray-200 text-sm font-semibold hover:shadow-xl transition"
           onClick={() => {
             setIsOpen(true)
             setShowDetails(false)
@@ -204,12 +204,12 @@ interface CookieToggleProps {
 function CookieToggle({ title, description, icon, enabled = false, locked = false, onToggle }: CookieToggleProps) {
   return (
     <div className="border border-gray-100 rounded-2xl p-4">
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-start sm:items-center gap-3">
           <div className="w-10 h-10 rounded-2xl bg-gray-50 flex items-center justify-center">{icon}</div>
           <div>
             <p className="font-semibold text-gray-900">{title}</p>
-            <p className="text-xs text-gray-500 mt-1">{description}</p>
+            <p className="text-xs text-gray-500 mt-1 leading-relaxed">{description}</p>
           </div>
         </div>
         {locked ? (

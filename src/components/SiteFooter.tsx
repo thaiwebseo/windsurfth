@@ -16,7 +16,7 @@ const resources = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-gray-950 text-white/90 mt-20">
+    <footer className="bg-gray-950 text-white/90">
       <div className="max-w-6xl mx-auto px-4 py-16 grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3 mb-6">

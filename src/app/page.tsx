@@ -216,7 +216,7 @@ export default function Home() {
     <main className="bg-white">
       <Hero />
 
-      <section id="workflow" className="py-24 max-w-6xl mx-auto px-4">
+      <section id="workflow" className="pt-16 pb-24 md:py-24 max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-5">Smart Workflow</p>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">เวิร์กโฟลว์ที่ครอบคลุมตั้งแต่เขียนจน Ship</h2>
@@ -239,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 bg-gradient-to-br from-orange-50 to-white">
+      <section id="pricing" className="pt-12 pb-14 md:py-20 bg-gradient-to-br from-orange-50 to-white">
         <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
           <div className="animate-fade-in-up">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">แพ็คเกจ Pro สำหรับนักพัฒนาจริงจัง</h2>
@@ -297,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="superpowers" className="py-24 bg-white">
+      <section id="superpowers" className="pt-12 pb-14 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-12">
             <div>
@@ -326,7 +326,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 max-w-6xl mx-auto px-4">
+      <section className="pt-10 pb-12 md:py-16 max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-orange-500">Why Windsurf</p>
           <h2 className="text-3xl font-bold text-gray-900">เปรียบเทียบกับ IDE รุ่นอื่น</h2>
@@ -356,7 +356,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="pt-10 pb-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-3">Impact Metrics</p>
@@ -379,14 +379,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="py-20 bg-gradient-to-b from-orange-50/40 to-white mt-12">
+      <section id="testimonials" className="pt-12 pb-18 md:py-20 bg-gradient-to-b from-orange-50/40 to-white mt-0 md:mt-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-3">Testimonials</p>
             <h2 className="text-3xl font-bold text-gray-900">เสียงจากนักพัฒนาที่ใช้ Windsurf ทุกวัน</h2>
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-8 md:space-y-10">
             <div className="marquee-row">
               <div className="marquee-track">
                 {[...Array(2)].flatMap((_, loopIndex) =>
