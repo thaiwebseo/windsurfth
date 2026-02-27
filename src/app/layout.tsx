@@ -5,6 +5,7 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { HeaderNav } from "@/components/HeaderNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { CookieBanner } from "@/components/CookieBanner";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteUrl } from "@/lib/site-config";
 
@@ -104,6 +105,7 @@ export default function RootLayout({
         <HeaderNav />
         {children}
         <SiteFooter />
+        <CookieBanner />
         <script
           type="application/ld+json"
           suppressHydrationWarning

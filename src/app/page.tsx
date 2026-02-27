@@ -112,8 +112,8 @@ const faqs = [
     a: "Windsurf ไม่ใช่แค่ copilot หรือ agent ธรรมดา แต่เป็น 'AI flows' ที่ผสมคุณทั้งสองอย่าง คุณสามารถ collaborate กับ AI แบบ real-time ในขณะเดียวกัน ที่ AI สามารถทำงานอย่างอิสระเพื่องานที่ใหญ่ขึ้น",
   },
   {
-    q: "เครดิต 250 ใช้ทำอะไรได้?",
-    a: "เครดิตเทียบเท่าเวลาการใช้งานแพ็คเกจ Pro ประมาณ 2-3 สัปดาห์ สามารถใช้เปิดโควต้า AI command แบบเต็ม",
+    q: "เครดิต 850 ใช้ทำอะไรได้?",
+    a: "ใช้ได้ราว 1 เดือนเต็ม หรือ 1-2 โปรเจกต์ ในแพ็คเกจ Pro สามารถใช้เปิดโควต้า AI command แบบเต็ม",
   },
 ]
 
@@ -223,7 +223,7 @@ export default function Home() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">Windsurf ทำหน้าที่เป็นคู่หูที่เข้าใจทั้ง repository, issue และ style guide ของคุณ</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 mt-12 stagger-children">
-          {featureHighlights.map((feature, index) => (
+          {featureHighlights.map((feature) => (
             <div key={feature.title} className="card-modern p-8 hover-lift h-full">
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-colored">

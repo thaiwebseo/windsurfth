@@ -2,16 +2,16 @@ import Link from "next/link";
 import { CTAButton } from "./CTAButton";
 
 const quickLinks = [
-  { label: "คุณสมบัติ", href: "#workflow" },
-  { label: "ราคา", href: "#pricing" },
-  { label: "ความสามารถ", href: "#superpowers" },
-  { label: "รีวิว", href: "#testimonials" },
+  { label: "คุณสมบัติ", href: "/#workflow" },
+  { label: "ราคา", href: "/pricing" },
+  { label: "ความสามารถ", href: "/#superpowers" },
+  { label: "รีวิว", href: "/#testimonials" },
 ];
 
 const resources = [
   { label: "เอกสารเริ่มต้น", href: "https://docs.windsurf.com" },
   { label: "Community Thai", href: "https://discord.gg/windsurf" },
-  { label: "Blog", href: "https://windsurf.blog" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export function SiteFooter() {
@@ -46,9 +46,9 @@ export function SiteFooter() {
           <ul className="space-y-3 text-sm">
             {quickLinks.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="hover:text-orange-300 transition-colors">
+                <Link href={item.href} className="hover:text-orange-300 transition-colors">
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -65,10 +65,6 @@ export function SiteFooter() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 text-sm text-white/60">
-            <p>ติดต่อทีม APAC: support@windsurf.com</p>
-            <p>โทร: +66 2 123 4567</p>
-          </div>
         </div>
       </div>
 
@@ -76,8 +72,8 @@ export function SiteFooter() {
         <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-white/50 flex flex-col md:flex-row gap-2 md:gap-0 md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Windsurf Thailand. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
           </div>
         </div>
       </div>

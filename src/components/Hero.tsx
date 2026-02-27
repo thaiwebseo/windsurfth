@@ -102,9 +102,9 @@ export function Hero() {
         <div className="mt-16 text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-full mb-3">
             <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-            <p className="text-orange-600 font-semibold">🔥 ข้อเสนอจำกัด 100 คนแรกเท่านั้น</p>
+            <p className="text-orange-600 font-semibold">🔥 ข้อเสนอสำหรับผู้ใช้ใหม่เท่านั้น</p>
           </div>
-          <p className="text-sm text-gray-500">250 เครดิต = ประมาณ 2-3 สัปดาห์การใช้งานแพ็คเกจ Pro</p>
+          <p className="text-sm text-gray-500">สมัครใหม่ตอนนี้รับทันที 250 + 500 + 100 เครดิต (~850) ใช้ได้ราว 1 เดือนเต็ม หรือ 1-2 โปรเจกต์ ในแพ็คเกจ Pro</p>
         </div>
       </div>
     </section>

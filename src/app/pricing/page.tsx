@@ -173,8 +173,8 @@ export default function PricingPage() {
               ctaSource={plan.ctaSource}
               ctaLabel={plan.ctaLabel}
               popular={plan.popular}
-              cardVariant={(plan as any).cardVariant}
-              ctaVariant={(plan as any).ctaVariant}
+              cardVariant={plan.cardVariant}
+              ctaVariant={plan.ctaVariant}
             />
           ))}
         </section>
