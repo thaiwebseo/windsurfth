@@ -60,9 +60,13 @@ export default function BlogPage() {
                 <span aria-hidden>→</span>
               </Link>
             </div>
-            <div className="relative h-80 rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
-              <Image src={featured.coverImage} alt={featured.title} fill className="object-cover" priority />
-            </div>
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="relative block h-80 rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300"
+              aria-label={`อ่านบทความ ${featured.title}`}
+            >
+              <Image src={featured.coverImage} alt={featured.title} fill className="object-cover transition-transform duration-300 hover:scale-105" priority />
+            </Link>
           </section>
         )}
 

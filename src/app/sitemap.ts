@@ -4,7 +4,7 @@ import { blogPosts } from "@/content/blogs"
 import { siteUrl } from "@/lib/site-config"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: MetadataRoute.Sitemap = ["", "/features", "/pricing", "/blog"].map((path) => ({
+  const staticRoutes: MetadataRoute.Sitemap = ["", "/features", "/pricing", "/blog", "/terms", "/privacy"].map((path) => ({
     url: new URL(path || "/", siteUrl).toString(),
     lastModified: new Date(),
   }))

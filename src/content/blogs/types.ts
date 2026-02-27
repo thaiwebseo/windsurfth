@@ -1,7 +1,13 @@
+export interface BlogSectionImage {
+  src: string
+  alt: string
+}
+
 export interface BlogSection {
   heading: string
   body: string
   bullets?: string[]
+  image?: BlogSectionImage
 }
 
 export interface BlogPost {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { startTransition, useEffect, useState } from "react"
 import { Cookie, ShieldCheck, BarChart3, Megaphone, X } from "lucide-react"
 
 const CONSENT_KEY = "windsurf-cookie-consent"
@@ -28,14 +28,20 @@ export function CookieBanner() {
     if (saved) {
       try {
         const parsed = JSON.parse(saved)
-        setConsent({ ...defaultConsent, ...parsed })
-        setHasDecision(true)
+        startTransition(() => {
+          setConsent({ ...defaultConsent, ...parsed })
+          setHasDecision(true)
+        })
       } catch {
         window.localStorage.removeItem(CONSENT_KEY)
-        setIsOpen(true)
+        startTransition(() => {
+          setIsOpen(true)
+        })
       }
     } else {
-      setIsOpen(true)
+      startTransition(() => {
+        setIsOpen(true)
+      })
     }
   }, [])
 

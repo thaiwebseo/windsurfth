@@ -21,7 +21,7 @@ export function HeaderNav() {
     <header className="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-orange-100/60 shadow-[0_4px_20px_rgba(255,107,53,0.05)]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="#" className="flex items-center">
+          <Link href="/" className="flex items-center" aria-label="กลับไปหน้าแรก">
             <Image
               src="/images/icons/windsurf-black-wordmark.svg"
               alt="Windsurf Thailand"
