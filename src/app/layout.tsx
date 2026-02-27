@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { HeaderNav } from "@/components/HeaderNav";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -113,6 +114,7 @@ export default function RootLayout({
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <VercelAnalytics />
         {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
