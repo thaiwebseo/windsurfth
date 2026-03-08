@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   type LucideIcon,
@@ -16,12 +17,40 @@ import {
 } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { CTAButton } from "@/components/CTAButton";
+import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { siteUrl } from "@/lib/site-config";
 
+const canonical = siteUrl;
+const ogImage = new URL("/images/hero/Windsurf%20AI%20IDE.png", siteUrl).toString();
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะสำหรับโปรแกรมเมอร์ไทย",
+  description: "Windsurf IDE คือ AI coding assistant ที่ช่วยทีมไทยเขียนโค้ดเร็วขึ้น ทำงานกับ context ได้ลึกขึ้น และเริ่มต้น Pro ได้พร้อม 250 เครดิตฟรี",
+  keywords: ["windsurf ไทย", "windsurf pro", "ai ide สำหรับโปรแกรมเมอร์ไทย", "windsurf ราคา", "windsurf features"],
+  metadata: {
+    alternates: { canonical },
+    openGraph: {
+      url: canonical,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Windsurf AI IDE สำหรับโปรแกรมเมอร์ไทย",
+        },
+      ],
+    },
+    twitter: {
+      images: [ogImage],
+    },
+  },
+});
+
 const stats = [
-  { label: "นักพัฒนาไทยใช้งาน", value: "15,000+" },
-  { label: "เวลาเฉลี่ยที่ประหยัดต่อวัน", value: "2 ชม." },
-  { label: "งานรีวิวโค้ดที่เสร็จเร็วขึ้น", value: "95%" },
+  { label: "ตัวอย่างขนาดทีมที่เริ่มทดลองใช้งาน", value: "ทีมเล็ก-ใหญ่" },
+  { label: "เวลาที่หลายทีมคาดหวังว่าจะประหยัดได้ต่อวัน", value: "สูงสุด 2 ชม." },
+  { label: "งานรีวิวและ debug ที่มักลื่นขึ้นอย่างเห็นได้ชัด", value: "เห็นผลเร็ว" },
 ];
 
 const featureHighlights: { title: string; detail: string; Icon: LucideIcon }[] = [
@@ -131,6 +160,55 @@ const faqSchema = {
   mainEntityOfPage: `${siteUrl}/#faq`,
 }
 ;
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะสำหรับโปรแกรมเมอร์ไทย",
+  url: canonical,
+  description: "หน้าแรกของ Windsurf Thailand สำหรับผู้ที่ต้องการดูภาพรวมฟีเจอร์ ราคา FAQ และเหตุผลที่ทีมไทยเลือกใช้ Windsurf IDE",
+  inLanguage: "th-TH",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Windsurf Thailand",
+    url: siteUrl,
+  },
+  about: {
+    "@type": "SoftwareApplication",
+    name: "Windsurf IDE",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Windows, macOS, Linux",
+    description: "AI IDE ที่ช่วยด้าน pair programming, code generation, debugging, repository context และ workflow automation",
+    offers: {
+      "@type": "Offer",
+      category: "Pro Plan",
+      description: "สมัครแพ็กเกจ Pro ผ่านลิงก์ของเว็บไซต์เพื่อรับ 250 เครดิตฟรีเพิ่มเติม",
+    },
+  },
+};
+
+const intentLinks = [
+  {
+    title: "ดูราคาและแพ็กเกจ",
+    href: "/pricing",
+    description: "เหมาะสำหรับคนที่กำลังเปรียบเทียบ Free, Pro และ Teams ก่อนตัดสินใจสมัคร",
+  },
+  {
+    title: "ดูฟีเจอร์ทั้งหมด",
+    href: "/features",
+    description: "เหมาะสำหรับคนที่ต้องการเข้าใจว่า Windsurf ช่วย workflow แบบไหนได้จริงบ้าง",
+  },
+  {
+    title: "อ่านบทความเชิงลึก",
+    href: "/blog",
+    description: "เหมาะสำหรับคนที่อยากอ่าน how-to, comparison และอัปเดต AI IDE ภาษาไทย",
+  },
+  {
+    title: "ดูคำถามที่พบบ่อย",
+    href: "/faq",
+    description: "เหมาะสำหรับคนที่ยังมีคำถามเรื่องราคา ความคุ้มค่า และการเริ่มต้นใช้งาน",
+  },
+];
 
 const testimonialRows = {
   top: [
@@ -360,7 +438,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-3">Impact Metrics</p>
-            <h2 className="text-3xl font-bold text-gray-900">ผลลัพธ์จากผู้ใช้จริง</h2>
+            <h2 className="text-3xl font-bold text-gray-900">ตัวอย่างผลลัพธ์ที่หลายทีมมักคาดหวัง</h2>
+            <p className="mt-3 text-gray-600">ตัวเลขและผลลัพธ์ด้านล่างใช้เพื่อสื่อภาพรวมของ impact ที่ผู้ใช้มักมองหาเมื่อเริ่มใช้ AI IDE ในงานจริง</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {stats.map((item, index) => (
@@ -379,11 +458,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-16 bg-gradient-to-b from-[#fff8ef] to-white">
+        <div className="max-w-6xl mx-auto px-4 space-y-10">
+          <div className="text-center space-y-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold">Next steps</p>
+            <h2 className="text-3xl font-bold text-gray-900">เริ่มจากหน้าที่ตรงกับสิ่งที่คุณต้องการที่สุด</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {intentLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="rounded-[28px] border border-gray-100 bg-white p-8 shadow-soft hover:-translate-y-1 transition">
+                <h3 className="text-2xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-3 text-gray-600 leading-relaxed">{item.description}</p>
+                <span className="mt-5 inline-flex items-center font-semibold text-orange-600">
+                  ไปที่หน้านี้
+                  <span aria-hidden className="ml-2">→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="testimonials" className="pt-12 pb-18 md:py-20 bg-gradient-to-b from-orange-50/40 to-white mt-0 md:mt-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
-            <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-3">Testimonials</p>
-            <h2 className="text-3xl font-bold text-gray-900">เสียงจากนักพัฒนาที่ใช้ Windsurf ทุกวัน</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-3">Community perspectives</p>
+            <h2 className="text-3xl font-bold text-gray-900">มุมมองตัวอย่างจากรูปแบบการใช้งานที่หลายทีมสนใจ</h2>
+            <p className="mt-3 text-gray-600">การ์ดด้านล่างใช้เพื่อสะท้อน use case ที่ผู้ใช้มักคาดหวังจากการนำ AI IDE ไปใช้กับงานจริงในหลายบทบาท</p>
           </div>
 
           <div className="space-y-8 md:space-y-10">
@@ -489,6 +590,11 @@ export default function Home() {
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
     </main>
   );

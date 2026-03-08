@@ -55,6 +55,47 @@ const audience = [
   "องค์กรที่กำลังมองหา AI IDE ที่ต่อยอดไปสู่การทำงานแบบทีมและ automation ได้",
 ]
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonical}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "หน้าแรก",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Windsurf Thailand",
+      item: canonical,
+    },
+  ],
+}
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About Windsurf Thailand | รู้จักเว็บและแนวทางของเรา",
+  url: canonical,
+  description: "หน้าที่อธิบายแนวทาง เนื้อหา กลุ่มเป้าหมาย และภารกิจของเว็บไซต์ Windsurf Thailand",
+  inLanguage: "th-TH",
+  breadcrumb: {
+    "@id": `${canonical}#breadcrumb`,
+  },
+  about: {
+    "@type": "Organization",
+    name: "Windsurf Thailand",
+    url: siteUrl,
+  },
+  audience: audience.map((item) => ({
+    "@type": "Audience",
+    audienceType: item,
+  })),
+}
+
 export default function AboutPage() {
   return (
     <main className="bg-white">
@@ -162,6 +203,16 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
     </main>
   )
 }

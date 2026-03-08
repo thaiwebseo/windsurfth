@@ -24,6 +24,7 @@ const organizationSchema = {
   name: "Windsurf Thailand",
   url: siteUrl,
   logo: new URL("/images/icons/windsurf-black-wordmark.svg", siteUrl).toString(),
+  description: "เว็บไซต์ภาษาไทยสำหรับข้อมูล ราคา ฟีเจอร์ และบทความการใช้งาน Windsurf IDE",
   sameAs: [
     "https://x.com/windsurf",
     "https://www.facebook.com/groups/windsurf",
@@ -31,10 +32,11 @@ const organizationSchema = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    email: "team@windsurfth.ai",
+    email: "hello@windsurfth.com",
     contactType: "customer support",
     availableLanguage: ["th", "en"],
   },
+  email: "hello@windsurfth.com",
 };
 
 const websiteSchema = {
@@ -42,11 +44,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Windsurf Thailand",
   url: siteUrl,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${siteUrl}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
+  inLanguage: "th-TH",
 };
 
 export const metadata: Metadata = buildPageMetadata({

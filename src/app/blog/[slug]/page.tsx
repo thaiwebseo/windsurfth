@@ -42,6 +42,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     metadata: {
       alternates: {
         canonical,
+        languages: {
+          "th-TH": canonical,
+        },
       },
       openGraph: {
         title: post.title,
@@ -132,6 +135,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${canonicalUrl}#article`,
     headline: post.title,
     description: post.excerpt,
     image: [coverUrl],
@@ -149,12 +153,42 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     publisher: {
       "@type": "Organization",
       name: "Windsurf Thailand",
+      url: siteUrl,
       logo: {
         "@type": "ImageObject",
         url: new URL("/images/icons/windsurf-black-wordmark.svg", siteUrl).toString(),
       },
     },
     mainEntityOfPage: canonicalUrl,
+    breadcrumb: {
+      "@id": `${canonicalUrl}#breadcrumb`,
+    },
+  }
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    name: post.title,
+    url: canonicalUrl,
+    description: post.excerpt,
+    inLanguage: "th-TH",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Windsurf Thailand",
+      url: siteUrl,
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: coverUrl,
+    },
+    about: {
+      "@type": "SoftwareApplication",
+      name: "Windsurf IDE",
+    },
+    mainEntity: {
+      "@id": `${canonicalUrl}#article`,
+    },
     breadcrumb: {
       "@id": `${canonicalUrl}#breadcrumb`,
     },
@@ -365,6 +399,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
         />
         <script
           type="application/ld+json"

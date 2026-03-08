@@ -33,10 +33,29 @@ export const metadata: Metadata = buildPageMetadata({
   },
 })
 
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Windsurf Blog | อัปเดต AI IDE ภาษาไทย",
+  url: canonical,
+  description: "หน้ารวมบทความ Windsurf ภาษาไทย ครอบคลุมข่าวอัปเดต คู่มือ how-to และบทความเปรียบเทียบเครื่องมือ AI IDE",
+  inLanguage: "th-TH",
+}
+
 export default function BlogPage() {
   const posts = [...blogPosts].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
   const [featured, ...rest] = posts
   const secondaryPosts = rest.length ? rest : posts
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: posts.map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: new URL(`/blog/${post.slug}`, siteUrl).toString(),
+      name: post.title,
+    })),
+  }
 
   return (
     <main className="bg-white py-20">
@@ -90,6 +109,16 @@ export default function BlogPage() {
           </div>
         </section>
       </div>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
     </main>
   )
 }

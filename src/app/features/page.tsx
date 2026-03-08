@@ -73,6 +73,49 @@ const platformFeatures = [
   { category: "Security", items: ["Self-hosted และ Hybrid deployment", "Role-based access control", "Audit log & data retention"] },
 ]
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonical}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "หน้าแรก",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Windsurf Features",
+      item: canonical,
+    },
+  ],
+}
+
+const featuresPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Windsurf Features | ฟีเจอร์และ AI Flows แบบจัดเต็ม",
+  url: canonical,
+  description: "หน้ารวมฟีเจอร์หลักของ Windsurf สำหรับผู้ใช้ไทย ครอบคลุม AI pair programming, Fast Context, workflow automation และ team memory",
+  inLanguage: "th-TH",
+  breadcrumb: {
+    "@id": `${canonical}#breadcrumb`,
+  },
+}
+
+const featureItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: featureHighlights.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.title,
+    description: item.description,
+  })),
+}
+
 export default function FeaturesPage() {
   return (
     <main className="bg-white">
@@ -201,6 +244,21 @@ export default function FeaturesPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(featuresPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(featureItemListSchema) }}
+      />
     </main>
   )
 }

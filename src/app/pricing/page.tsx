@@ -8,6 +8,21 @@ import { siteUrl } from "@/lib/site-config"
 const canonical = new URL("/pricing", siteUrl).toString()
 const ogImage = new URL("/images/hero/Windsurf%20AI%20IDE.png", siteUrl).toString()
 
+const pricingFaqs = [
+  {
+    question: "Windsurf Pro ราคาเท่าไร",
+    answer: "แพ็กเกจ Pro เริ่มต้นที่ 15 ดอลลาร์ต่อเดือน พร้อมทดลองฟรี 14 วัน และสิทธิ์รับเครดิตเพิ่มเติมเมื่อสมัครผ่านลิงก์ที่เว็บไซต์แนะนำ",
+  },
+  {
+    question: "แพ็กเกจ Teams เหมาะกับใคร",
+    answer: "Teams เหมาะกับทีมที่ต้องการ centralized billing, admin dashboard, priority support และการจัดการ workflow ร่วมกันในระดับทีม",
+  },
+  {
+    question: "ถ้าต้องใช้เครดิตเพิ่มสามารถซื้อเพิ่มได้หรือไม่",
+    answer: "ได้ โดยแพ็กเกจที่รองรับสามารถซื้อ add-on prompt credits เพิ่มเติมตามปริมาณงานที่ต้องใช้จริง",
+  },
+]
+
 export const metadata: Metadata = buildPageMetadata({
   title: "แพ็คเกจ Windsurf Pro | ราคาพร้อมทดลองฟรี",
   description:
@@ -79,6 +94,69 @@ const planData = [
     ctaLabel: "เลือกแพ็คเกจทีม",
   },
 ]
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "หน้าแรก",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "ราคา Windsurf",
+      item: canonical,
+    },
+  ],
+}
+
+const pricingPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "แพ็คเกจ Windsurf Pro | ราคาพร้อมทดลองฟรี",
+  url: canonical,
+  description: "หน้าเปรียบเทียบราคาแพ็กเกจ Windsurf ทั้ง Free, Pro และ Teams สำหรับผู้ใช้ไทย",
+  inLanguage: "th-TH",
+  breadcrumb: {
+    "@id": `${canonical}#breadcrumb`,
+  },
+}
+
+const offerSchema = {
+  "@context": "https://schema.org",
+  "@type": "AggregateOffer",
+  url: canonical,
+  priceCurrency: "USD",
+  lowPrice: "0",
+  highPrice: "30",
+  offerCount: planData.length.toString(),
+  offers: planData.map((plan) => ({
+    "@type": "Offer",
+    name: `Windsurf ${plan.title}`,
+    priceCurrency: "USD",
+    price: plan.price.replace("$", ""),
+    category: "AI IDE Subscription",
+    description: `${plan.highlight} ${plan.benefits.join(", ")}`,
+    url: canonical,
+  })),
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: pricingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+}
 
 const compareHeader = [
   { label: "Free", sub: "$0/เดือน" },
@@ -256,7 +334,42 @@ export default function PricingPage() {
             </table>
           </div>
         </section>
+
+        <section className="rounded-[32px] border border-orange-100 bg-orange-50/40 p-8 md:p-10 space-y-6">
+          <div className="space-y-2 text-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-orange-500">Pricing FAQs</p>
+            <h2 className="text-3xl font-semibold text-gray-900">คำถามที่พบบ่อยก่อนเลือกแพ็กเกจ</h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {pricingFaqs.map((item) => (
+              <div key={item.question} className="rounded-2xl border border-orange-100 bg-white px-5 py-5">
+                <h3 className="text-lg font-semibold text-gray-900">{item.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...breadcrumbSchema, "@id": `${canonical}#breadcrumb` }) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </main>
   )
 }

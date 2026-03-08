@@ -60,6 +60,44 @@ const commonQuestions = [
   "มีบทความหรือคู่มือไหนที่ควรอ่านก่อนตัดสินใจสมัคร",
 ]
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonical}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "หน้าแรก",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact Windsurf Thailand",
+      item: canonical,
+    },
+  ],
+}
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Windsurf Thailand | ติดต่อเรา",
+  url: canonical,
+  description: "หน้าติดต่อสำหรับผู้ที่ต้องการสอบถามเรื่องแพ็กเกจ ฟีเจอร์ และแนวทางเริ่มต้นใช้งาน Windsurf",
+  inLanguage: "th-TH",
+  breadcrumb: {
+    "@id": `${canonical}#breadcrumb`,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@windsurfth.com",
+    contactType: "customer support",
+    availableLanguage: ["th", "en"],
+  },
+}
+
 export default function ContactPage() {
   return (
     <main className="bg-white">
@@ -171,6 +209,16 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
     </main>
   )
 }

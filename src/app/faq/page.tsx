@@ -50,6 +50,26 @@ const faqItems = [
   },
 ]
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonical}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "หน้าแรก",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Windsurf FAQ",
+      item: canonical,
+    },
+  ],
+}
+
 export const metadata: Metadata = buildPageMetadata({
   title: "Windsurf FAQ | คำถามที่พบบ่อยก่อนเริ่มใช้งาน",
   description:
@@ -86,6 +106,18 @@ export default function FAQPage() {
         text: item.answer,
       },
     })),
+  }
+
+  const faqPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Windsurf FAQ | คำถามที่พบบ่อยก่อนเริ่มใช้งาน",
+    url: canonical,
+    description: "หน้าคำถามที่พบบ่อยเกี่ยวกับ Windsurf สำหรับผู้ใช้ไทย ครอบคลุมราคา ฟีเจอร์ และการเริ่มต้นใช้งาน",
+    inLanguage: "th-TH",
+    breadcrumb: {
+      "@id": `${canonical}#breadcrumb`,
+    },
   }
 
   return (
@@ -172,6 +204,16 @@ export default function FAQPage() {
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
       />
     </main>
   )
