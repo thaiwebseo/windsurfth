@@ -6,6 +6,7 @@ import { Share2 } from "lucide-react"
 import { blogPosts } from "@/content/blogs"
 import { BlogCard } from "@/components/BlogCard"
 import { CTAButton } from "@/components/CTAButton"
+import { TrackedAnchor } from "@/components/TrackedAnchor"
 import { buildBlogMetadata } from "@/lib/seo"
 import { siteUrl } from "@/lib/site-config"
 
@@ -234,12 +235,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </div>
         </header>
 
-        <div className="relative w-full h-96 rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
+        <div className="relative w-full min-h-[220px] h-[34vw] max-h-[500px] rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
           <Image
             src={post.coverImage}
             alt={`${post.title} - ภาพประกอบบทความ Windsurf`}
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>
@@ -255,10 +256,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 <ol className="space-y-2.5 text-sm lg:text-[0.95rem] text-gray-700 leading-snug">
                   {tocItems.map((item, index) => (
                     <li key={item.id}>
-                      <a href={`#${item.id}`} className="inline-flex gap-2.5 hover:text-orange-500 transition-colors">
+                      <TrackedAnchor href={`#${item.id}`} className="inline-flex gap-2.5 hover:text-orange-500 transition-colors" action="blog_toc_click" category="content" label={`${post.slug}_${item.id}`}>
                         <span className="min-w-4 font-semibold text-orange-500">{index + 1}.</span>
                         <span>{item.heading}</span>
-                      </a>
+                      </TrackedAnchor>
                     </li>
                   ))}
                 </ol>
@@ -325,15 +326,18 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {shareLinks.map((link) => (
-              <a
+              <TrackedAnchor
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-full border border-gray-200 text-gray-700 hover:border-orange-400 hover:text-orange-500 transition-colors"
+                action="blog_share_click"
+                category="content"
+                label={`${post.slug}_${link.label}`}
               >
                 {link.label}
-              </a>
+              </TrackedAnchor>
             ))}
           </div>
         </section>
@@ -346,7 +350,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {relatedPosts.map((relatedPost) => (
-                <BlogCard key={relatedPost.slug} {...relatedPost} />
+                <BlogCard key={relatedPost.slug} {...relatedPost} trackingSource={`related_${post.slug}`} />
               ))}
             </div>
           </section>

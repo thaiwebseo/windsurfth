@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { getReferralLink } from '@/lib/referrals'
+import { trackEvent } from '@/lib/analytics'
 
 export type CTAButtonVariant = 'primary' | 'emerald' | 'outline'
 
@@ -32,6 +33,7 @@ export function CTAButton({ source = 'website', className = '', children, varian
       target="_blank"
       rel="noopener noreferrer"
       className={`${baseClass} ${className}`.trim()}
+      onClick={() => trackEvent({ action: 'cta_click', category: 'conversion', label: source })}
     >
       <span className="relative z-10">{children}</span>
       <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />

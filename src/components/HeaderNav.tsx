@@ -5,13 +5,16 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CTAButton } from "./CTAButton";
+import { trackEvent } from "@/lib/analytics";
 
 const navItems = [
   { label: "หน้าแรก", href: "/" },
+  { label: "เกี่ยวกับเรา", href: "/about" },
   { label: "ราคา", href: "/pricing" },
   { label: "จุดเด่น", href: "/features" },
   { label: "บทความ", href: "/blog" },
-  { label: "FAQs", href: "/#faq" },
+  { label: "ติดต่อ", href: "/contact" },
+  { label: "FAQs", href: "/faq" },
 ];
 
 export function HeaderNav() {
@@ -21,7 +24,7 @@ export function HeaderNav() {
     <header className="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-orange-100/60 shadow-[0_4px_20px_rgba(255,107,53,0.05)]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center" aria-label="กลับไปหน้าแรก">
+          <Link href="/" className="flex items-center" aria-label="กลับไปหน้าแรก" onClick={() => trackEvent({ action: "nav_click", category: "navigation", label: "logo_home" })}>
             <Image
               src="/images/icons/windsurf-black-wordmark.svg"
               alt="Windsurf Thailand"
@@ -34,7 +37,7 @@ export function HeaderNav() {
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="hover:text-orange-600 transition-colors">
+              <a key={item.href} href={item.href} className="hover:text-orange-600 transition-colors" onClick={() => trackEvent({ action: "nav_click", category: "navigation", label: `desktop_${item.href}` })}>
                 {item.label}
               </a>
             ))}
@@ -58,7 +61,10 @@ export function HeaderNav() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  trackEvent({ action: "nav_click", category: "navigation", label: `mobile_${item.href}` })
+                  setOpen(false)
+                }}
                 className="block text-gray-700 font-medium"
               >
                 {item.label}

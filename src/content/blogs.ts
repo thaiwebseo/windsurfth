@@ -4,10 +4,14 @@ import { glm5MinimaxPost } from "./blogs/glm-5-minimax-m2-5-windsurf"
 import { gpt54Post } from "./blogs/gpt-5-4-windsurf"
 import { gpt53CodexSparkPost } from "./blogs/gpt-5-3-codex-spark-windsurf"
 import { windsurfGithubGuidePost } from "./blogs/windsurf-github-guide"
+import { windsurfVsCursorPost } from "./blogs/windsurf-vs-cursor"
+import { windsurfVsGithubCopilotPost } from "./blogs/windsurf-vs-github-copilot"
 
 export { type BlogPost, type BlogSection } from "./blogs/types"
 
 export const blogPosts = [
+  windsurfVsGithubCopilotPost,
+  windsurfVsCursorPost,
   gpt54Post,
   windsurfGithubGuidePost,
   gpt53CodexSparkPost,

@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
+import { trackEvent } from "@/lib/analytics"
 
 interface BlogCardProps {
   slug: string
@@ -9,12 +12,13 @@ interface BlogCardProps {
   date: string
   readingTime: string
   tags: string[]
+  trackingSource?: string
 }
 
-export function BlogCard({ slug, title, excerpt, coverImage, date, readingTime, tags }: BlogCardProps) {
+export function BlogCard({ slug, title, excerpt, coverImage, date, readingTime, tags, trackingSource = "blog_card" }: BlogCardProps) {
   return (
     <article className="rounded-[32px] border border-gray-200 bg-white shadow-soft overflow-hidden flex flex-col">
-      <Link href={`/blog/${slug}`} className="relative w-full h-52 block group">
+      <Link href={`/blog/${slug}`} className="relative w-full h-52 block group" onClick={() => trackEvent({ action: "blog_click", category: "content", label: `${trackingSource}_image_${slug}` })}>
         <Image src={coverImage} alt={title} fill className="object-cover transition-transform duration-300 group-hover:scale-[1.03]" priority={false} />
       </Link>
       <div className="p-6 flex flex-col gap-3 flex-1">
@@ -35,6 +39,7 @@ export function BlogCard({ slug, title, excerpt, coverImage, date, readingTime, 
         <Link
           href={`/blog/${slug}`}
           className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:translate-x-1 transition-transform"
+          onClick={() => trackEvent({ action: "blog_click", category: "content", label: `${trackingSource}_cta_${slug}` })}
         >
           อ่านบทความ
           <span aria-hidden>→</span>

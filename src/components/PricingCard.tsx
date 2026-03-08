@@ -1,4 +1,7 @@
+"use client"
+
 import { CTAButton, CTAButtonVariant } from "./CTAButton"
+import { trackEvent } from "@/lib/analytics"
 
 interface PricingCardProps {
   title: string
@@ -32,6 +35,7 @@ export function PricingCard({
 
   return (
     <div
+      onClick={() => trackEvent({ action: "pricing_card_view", category: "commerce", label: title })}
       className={`rounded-[32px] p-8 h-full flex flex-col gap-6 transition hover:-translate-y-1 ${
         popular ? "ring-2 ring-orange-200" : ""
       } ${cardBase}`}

@@ -1,17 +1,24 @@
+"use client"
+
 import Link from "next/link";
 import { CTAButton } from "./CTAButton";
+import { trackEvent } from "@/lib/analytics";
 
 const quickLinks = [
+  { label: "เกี่ยวกับเรา", href: "/about" },
   { label: "คุณสมบัติ", href: "/#workflow" },
   { label: "ราคา", href: "/pricing" },
   { label: "ความสามารถ", href: "/#superpowers" },
   { label: "รีวิว", href: "/#testimonials" },
+  { label: "ติดต่อ", href: "/contact" },
 ];
 
 const resources = [
   { label: "เอกสารเริ่มต้น", href: "https://docs.windsurf.com" },
   { label: "Community Thai", href: "https://discord.gg/windsurf" },
   { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function SiteFooter() {
@@ -46,7 +53,7 @@ export function SiteFooter() {
           <ul className="space-y-3 text-sm">
             {quickLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-orange-300 transition-colors">
+                <Link href={item.href} className="hover:text-orange-300 transition-colors" onClick={() => trackEvent({ action: "footer_click", category: "navigation", label: `quick_${item.href}` })}>
                   {item.label}
                 </Link>
               </li>
@@ -59,7 +66,7 @@ export function SiteFooter() {
           <ul className="space-y-3 text-sm">
             {resources.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-orange-300 transition-colors" target="_blank">
+                <Link href={item.href} className="hover:text-orange-300 transition-colors" target="_blank" onClick={() => trackEvent({ action: "footer_click", category: "navigation", label: `resource_${item.href}` })}>
                   {item.label}
                 </Link>
               </li>

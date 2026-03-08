@@ -1,8 +1,8 @@
 import Image from "next/image"
-import Link from "next/link"
 import type { Metadata } from "next"
 import { blogPosts } from "@/content/blogs"
 import { BlogCard } from "@/components/BlogCard"
+import { TrackedLink } from "@/components/TrackedLink"
 import { buildPageMetadata } from "@/lib/seo"
 import { siteUrl } from "@/lib/site-config"
 
@@ -52,21 +52,27 @@ export default function BlogPage() {
                 <span>•</span>
                 <span>{featured.readingTime}</span>
               </div>
-              <Link
+              <TrackedLink
                 href={`/blog/${featured.slug}`}
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:translate-x-1 transition"
+                action="blog_click"
+                category="content"
+                label={`featured_cta_${featured.slug}`}
               >
                 อ่านบทความเต็ม
                 <span aria-hidden>→</span>
-              </Link>
+              </TrackedLink>
             </div>
-            <Link
+            <TrackedLink
               href={`/blog/${featured.slug}`}
               className="relative block h-80 rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300"
-              aria-label={`อ่านบทความ ${featured.title}`}
+              ariaLabel={`อ่านบทความ ${featured.title}`}
+              action="blog_click"
+              category="content"
+              label={`featured_image_${featured.slug}`}
             >
               <Image src={featured.coverImage} alt={featured.title} fill className="object-cover transition-transform duration-300 hover:scale-105" priority />
-            </Link>
+            </TrackedLink>
           </section>
         )}
 
@@ -79,7 +85,7 @@ export default function BlogPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {secondaryPosts.map((post) => (
-              <BlogCard key={post.slug} {...post} />
+              <BlogCard key={post.slug} {...post} trackingSource="blog_listing" />
             ))}
           </div>
         </section>
