@@ -10,6 +10,11 @@ export interface BlogSection {
   image?: BlogSectionImage
 }
 
+export interface BlogFaqItem {
+  question: string
+  answer: string
+}
+
 export interface BlogPost {
   slug: string
   title: string
@@ -26,4 +31,5 @@ export interface BlogPost {
     title: string
     description: string
   }
+  faq?: BlogFaqItem[]
 }

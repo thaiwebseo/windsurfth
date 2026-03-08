@@ -66,4 +66,21 @@ export const windsurfGithubGuidePost: BlogPost = {
     title: "เริ่มใช้ Windsurf + GitHub",
     description: "สมัครแพ็คเกจ Pro เพื่อใช้ Fast Context, AI review และเครดิต 250 สำหรับการเชื่อมกับทีม",
   },
+  faq: [
+    {
+      question: "ต้องติดตั้ง Git ก่อนเชื่อม Windsurf กับ GitHub หรือไม่",
+      answer:
+        "ต้องติดตั้งก่อน เพราะการ push, commit และจัดการ branch ยังอาศัย Git บนเครื่องเป็นหลัก จากนั้นจึงค่อยเชื่อมบัญชี GitHub ผ่าน Windsurf หรือ remote URL ของ repository.",
+    },
+    {
+      question: "อัปโหลดโค้ดครั้งแรกควรใช้คำสั่งอะไรบ้าง",
+      answer:
+        "ลำดับพื้นฐานคือ git init, git add ., git commit -m \"Initial commit\", git branch -M main, git remote add origin <URL> และ git push -u origin main.",
+    },
+    {
+      question: "ถ้าเชื่อม repository แล้ว การอัปเดตครั้งต่อไปทำอย่างไร",
+      answer:
+        "โดยทั่วไปจะใช้ git add ., git commit -m \"ข้อความอธิบายการแก้ไข\" และ git push origin main หรือชื่อ branch ที่กำลังทำงานอยู่.",
+    },
+  ],
 }
