@@ -22,6 +22,41 @@ function createSectionId(heading: string) {
     .replace(/\s+/g, "-")
 }
 
+function getIntentCta(post: (typeof blogPosts)[number]) {
+  if (post.tags.includes("Pricing") || post.tags.includes("Commercial") || post.tags.includes("Pro")) {
+    return {
+      primaryLabel: "สมัคร Pro รับเครดิต",
+      secondaryLabel: "ดูราคาและเทียบแพ็กเกจ",
+      secondaryHref: "/pricing",
+      note: "เหมาะกับบทความที่ผู้อ่านกำลังประเมินความคุ้มค่า ราคา และความต่างของแต่ละแพ็กเกจ",
+    }
+  }
+
+  if (post.tags.includes("Comparison") || post.tags.includes("Cursor") || post.tags.includes("Migration")) {
+    return {
+      primaryLabel: "สมัคร Pro รับเครดิต",
+      secondaryLabel: "ดูฟีเจอร์ที่ต่างกันชัดขึ้น",
+      secondaryHref: "/features",
+      note: "เหมาะกับผู้อ่านที่กำลังเปรียบเทียบเครื่องมือหรือคิดเรื่องการย้าย workflow",
+    }
+  }
+
+  return {
+    primaryLabel: "สมัคร Pro รับเครดิต",
+    secondaryLabel: "ดูบทความและคำแนะนำเพิ่มเติม",
+    secondaryHref: "/blog",
+    note: "เหมาะกับผู้อ่านที่ยังอยู่ในช่วงศึกษา use case และต้องการข้อมูลต่อก่อนตัดสินใจ",
+  }
+}
+
+function getQuickSummary(post: (typeof blogPosts)[number]) {
+  return [
+    post.heroHighlight,
+    post.sections[0]?.bullets?.[0] ?? post.sections[0]?.body,
+    post.sections[1]?.bullets?.[0] ?? post.sections[1]?.body,
+  ].filter(Boolean).slice(0, 3)
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = blogPosts.find((item) => item.slug === slug)
@@ -84,6 +119,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   const encodedUrl = encodeURIComponent(canonicalUrl)
   const encodedText = encodeURIComponent(post.title)
   const updatedAt = post.publishedAt
+  const intentCta = getIntentCta(post)
+  const quickSummary = getQuickSummary(post)
   const tocItems = post.sections.map((section) => ({
     heading: section.heading,
     id: createSectionId(section.heading),
@@ -267,6 +304,25 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             </div>
           </div>
+
+          <div className="mx-auto max-w-3xl rounded-[28px] border border-gray-100 bg-white px-6 py-5 text-left shadow-sm">
+            <p className="text-sm uppercase tracking-[0.3em] text-orange-500">สรุปสำหรับคนรีบ</p>
+            <ul className="mt-4 space-y-3 text-gray-600 leading-relaxed">
+              {quickSummary.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="text-orange-500">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mx-auto max-w-3xl rounded-[28px] border border-blue-100 bg-blue-50/70 px-6 py-5 text-left">
+            <p className="text-sm font-semibold text-gray-900">หมายเหตุด้านข้อมูลและการอัปเดต</p>
+            <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              บทความนี้จัดทำขึ้นเพื่อช่วยประเมินการใช้งาน Windsurf จากมุม workflow, ราคา, ฟีเจอร์ และความเหมาะสมกับรูปแบบงานของคุณ โดยข้อมูลด้านแพ็กเกจ ราคา เครดิต หรือความสามารถของผลิตภัณฑ์อาจเปลี่ยนได้ตามช่วงเวลา ดังนั้นก่อนตัดสินใจสมัครควรตรวจสอบรายละเอียดล่าสุดจากหน้าราคาและฟีเจอร์อีกครั้ง
+            </p>
+          </div>
         </header>
 
         <div className="relative w-full min-h-[220px] h-[34vw] max-h-[500px] rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
@@ -330,14 +386,23 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             <p className="text-sm uppercase tracking-[0.35em] text-white/80">Ready to try?</p>
             <h3 className="text-3xl font-semibold">{post.cta.title}</h3>
             <p className="mx-auto max-w-2xl text-white/90">{post.cta.description}</p>
+            <div className="mx-auto max-w-2xl rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-left backdrop-blur-sm">
+              <p className="text-sm font-semibold text-white">เหมาะกับ intent นี้</p>
+              <p className="mt-1 text-sm text-white/90">{intentCta.note}</p>
+            </div>
             <div className="mx-auto w-fit rounded-2xl border border-white/35 bg-white/16 px-4 py-3 backdrop-blur-sm shadow-lg shadow-orange-600/20">
               <p className="text-sm md:text-base font-semibold text-white">
                 พิเศษ! 250 เครดิตฟรีสำหรับแพ็คเกจ Pro ขึ้นไป เมื่อสมัครผ่านลิงก์นี้เท่านั้น
               </p>
             </div>
-            <CTAButton source="blog-cta" variant="outline" className="mx-auto w-fit border-0 bg-white text-orange-600 shadow-2xl shadow-orange-900/20 hover:bg-orange-50 hover:text-orange-700">
-              สมัคร Pro รับเครดิต
-            </CTAButton>
+            <div className="mx-auto flex w-full max-w-2xl flex-wrap items-center justify-center gap-4">
+              <CTAButton source="blog-cta" variant="outline" className="mx-auto w-fit border-0 bg-white text-orange-600 shadow-2xl shadow-orange-900/20 hover:bg-orange-50 hover:text-orange-700">
+                {intentCta.primaryLabel}
+              </CTAButton>
+              <Link href={intentCta.secondaryHref} className="inline-flex items-center justify-center rounded-xl border border-white/35 px-6 py-4 font-semibold text-white hover:bg-white/10 transition-colors">
+                {intentCta.secondaryLabel}
+              </Link>
+            </div>
           </div>
         )}
 

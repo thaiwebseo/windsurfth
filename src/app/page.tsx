@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   type LucideIcon,
   Zap,
@@ -53,6 +52,48 @@ const stats = [
   { label: "งานรีวิวและ debug ที่มักลื่นขึ้นอย่างเห็นได้ชัด", value: "เห็นผลเร็ว" },
 ];
 
+const fitGuidance = [
+  {
+    title: "เหมาะกับใคร",
+    items: [
+      "นักพัฒนาที่ใช้ AI ทุกวันกับ coding, debug, review และ refactor",
+      "ทีมที่ต้องการให้ AI ช่วยงานหลายขั้นตอน ไม่ใช่แค่เติมโค้ด",
+      "องค์กรที่กำลังวาง AI workflow ระดับทีมและต้องการ scale ต่อ",
+    ],
+  },
+  {
+    title: "อาจยังไม่จำเป็น",
+    items: [
+      "ผู้ใช้ที่ยังลอง AI IDE แบบเบา ๆ และยังไม่มี use case ชัด",
+      "ทีมที่ยังต้องการเพียง code completion หรือ inline suggestion เป็นหลัก",
+      "ผู้ที่ยังไม่พร้อมเปลี่ยน workflow และต้องการเริ่มจากเครื่องมือพื้นฐานก่อน",
+    ],
+  },
+  {
+    title: "ควรเริ่มแพ็กเกจไหน",
+    items: [
+      "เริ่ม Free ถ้าคุณยังต้องการสำรวจว่ากับงานของตัวเองคุ้มไหม",
+      "เริ่ม Pro ถ้าคุณใช้ AI เป็นเครื่องมือหลักในงานจริงแล้ว",
+      "เริ่ม Teams ถ้าต้องการการจัดการร่วมกัน, billing กลาง และ governance สำหรับทีม",
+    ],
+  },
+]
+
+const scenarioCards = [
+  {
+    title: "ทีม Product + Engineering",
+    description: "ใช้ AI ช่วยอ่าน requirement, แปลงเป็น implementation plan, ลงมือแก้หลายไฟล์ และช่วยสรุปสิ่งที่เปลี่ยนก่อนส่งต่อในทีม",
+  },
+  {
+    title: "นักพัฒนาที่ต้อง debug งานซับซ้อน",
+    description: "เหมาะกับโจทย์ที่ต้องดู log, test, code หลายส่วนพร้อมกัน และอยากให้ AI ช่วยไล่ root cause แบบต่อเนื่องมากกว่าแค่ตอบเป็นรอบสั้น ๆ",
+  },
+  {
+    title: "ทีมที่กำลัง scale การใช้ AI",
+    description: "เหมาะเมื่อเป้าหมายไม่ใช่แค่เขียนโค้ดเร็วขึ้น แต่คือทำให้ workflow ของทีมมี memory, consistency และกระจายแนวทางการทำงานได้ง่ายขึ้น",
+  },
+]
+
 const featureHighlights: { title: string; detail: string; Icon: LucideIcon }[] = [
   {
     title: "โค้ดเสร็จเร็วขึ้น",
@@ -81,11 +122,36 @@ const featureHighlights: { title: string; detail: string; Icon: LucideIcon }[] =
 ];
 
 const comparison = [
-  { feature: "สั่งงานด้วยภาษาธรรมชาติ (ไทย)", windsurf: "✓", cursor: "~", copilot: "✕" },
-  { feature: "Refactor ทั้งโปรเจกต์", windsurf: "✓", cursor: "✓", copilot: "✕" },
-  { feature: "Debug พร้อมสร้าง test case", windsurf: "✓", cursor: "~", copilot: "~" },
-  { feature: "AI Pair Programming เต็มรูปแบบ", windsurf: "✓", cursor: "~", copilot: "✕" },
-  { feature: "เครดิตพิเศษ 250 เมื่อสมัคร Pro", windsurf: "✓", cursor: "✕", copilot: "✕" },
+  {
+    feature: "สั่งงานด้วยภาษาธรรมชาติ (ไทย)",
+    windsurf: "รองรับ workflow ที่ต้องอธิบายโจทย์ยาวและหลายขั้นตอน",
+    cursor: "ทำได้บางกรณี แต่ประสบการณ์อาจขึ้นกับ flow ที่ใช้",
+    copilot: "มักเด่นด้าน suggestion มากกว่าการคุย workflow ยาว",
+  },
+  {
+    feature: "Refactor ทั้งโปรเจกต์",
+    windsurf: "เหมาะเมื่อโจทย์กินหลายไฟล์และต้องอาศัย context ต่อเนื่อง",
+    cursor: "ทำได้ดีในหลายงาน editor-first และการแก้หลายไฟล์บางประเภท",
+    copilot: "มักเหมาะกับงานเฉพาะจุดมากกว่างาน refactor ระดับกว้าง",
+  },
+  {
+    feature: "Debug พร้อมสร้าง test case",
+    windsurf: "เด่นเมื่ออยากให้ AI ช่วยไล่ปัญหา อธิบายสาเหตุ และเดินงานต่อ",
+    cursor: "ช่วยได้ในหลายเคส แต่ความลื่นขึ้นกับความซับซ้อนของบริบท",
+    copilot: "ช่วยสร้าง snippet และ suggestion ได้ แต่ flow debug อาจไม่ลึกเท่า",
+  },
+  {
+    feature: "AI Pair Programming เต็มรูปแบบ",
+    windsurf: "เหมาะกับทีมที่อยากใช้ AI เป็น workflow layer มากกว่า autocomplete",
+    cursor: "เหมาะกับทีมที่ชอบประสบการณ์ editor-first และเริ่มใช้งานเร็ว",
+    copilot: "มักตอบโจทย์งาน completion และ assist แบบสั้นมากกว่า",
+  },
+  {
+    feature: "เครดิตพิเศษ 250 เมื่อสมัคร Pro",
+    windsurf: "มีผ่านลิงก์แนะนำของเว็บนี้สำหรับแพ็กเกจ Pro ขึ้นไป",
+    cursor: "ไม่มีข้อเสนอแบบเดียวกันในบริบทหน้านี้",
+    copilot: "ไม่มีข้อเสนอแบบเดียวกันในบริบทหน้านี้",
+  },
 ];
 
 const superpowerFeatures: { title: string; description: string; Icon: LucideIcon }[] = [
@@ -143,6 +209,18 @@ const faqs = [
   {
     q: "เครดิต 850 ใช้ทำอะไรได้?",
     a: "ใช้ได้ราว 1 เดือนเต็ม หรือ 1-2 โปรเจกต์ ในแพ็คเกจ Pro สามารถใช้เปิดโควต้า AI command แบบเต็ม",
+  },
+  {
+    q: "Windsurf เหมาะกับทีมแบบไหน?",
+    a: "เหมาะกับทีมที่ใช้ AI มากกว่า autocomplete เช่น ต้องการให้ AI ช่วยอ่าน codebase, debug, review, สรุปงานหลายไฟล์ และเชื่อม workflow ระหว่าง dev, docs และการสื่อสารในทีม",
+  },
+  {
+    q: "ควรเริ่มจาก Free, Pro หรือ Teams?",
+    a: "ถ้าคุณยังสำรวจ use case เริ่มจาก Free ก่อนจะเหมาะที่สุด แต่ถ้าใช้ AI ทุกวันและต้องการ workflow ที่ต่อเนื่องขึ้น Pro มักคุ้มกว่า ส่วน Teams เหมาะกับองค์กรที่ต้องการการจัดการร่วมกันและการ scale การใช้งานในระดับทีม",
+  },
+  {
+    q: "Windsurf ต่างจาก Cursor ยังไงในงานจริง?",
+    a: "ถ้าดูในงานจริง Cursor มักเด่นด้าน editor-first experience และ adoption ที่ง่าย ส่วน Windsurf มักเด่นเมื่อโจทย์เริ่มไปสู่ workflow ที่หลายขั้นตอน ต้องใช้ context กว้าง และต้องการให้ AI ทำงานต่อเนื่องมากขึ้น",
   },
 ]
 
@@ -210,85 +288,6 @@ const intentLinks = [
   },
 ];
 
-const testimonialRows = {
-  top: [
-    {
-      name: "ลเล็กซ์ จันทร์",
-      handle: "@AlexFinnX",
-      role: "Lead Engineer, FinTech",
-      avatar: "https://i.pravatar.cc/120?img=12",
-      quote:
-        "พอใช้ Windsurf แล้ว PR ที่เคยใช้เวลาเป็นวัน เหลือไม่ถึงชั่วโมง ประหยัดแรงทีม reviewer ไปเยอะมาก",
-      color: "from-orange-400 to-orange-600",
-    },
-    {
-      name: "แจ็ค ฟอร์จ",
-      handle: "@TheJackForge",
-      role: "CTO, Forge Labs",
-      avatar: "https://i.pravatar.cc/120?img=33",
-      quote:
-        "AI flow ของ Windsurf ทำให้เขียน feature ยาวๆ แบบ agentic ได้จริง ทีมผมย้าย workflow มาทั้งหมดแล้ว",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      name: "อลาวิโร วันทศ",
-      handle: "@DrWanTech",
-      role: "AI Researcher",
-      avatar: "https://i.pravatar.cc/120?img=56",
-      quote:
-        "การคุยกับเอเจนต์ภาษาไทยลื่นมาก พิมพ์ requirement เป็นไทยแล้วให้มัน generate test + code ได้ครบ",
-      color: "from-sky-400 to-blue-500",
-    },
-    {
-      name: "ลูก้า",
-      handle: "@Knackkits",
-      role: "Freelance Dev",
-      avatar: "https://i.pravatar.cc/120?img=22",
-      quote:
-        "งานรีวิวโค้ดและ refactor โปรเจ็กต์ขนาดใหญ่ทำง่ายขึ้นมาก เพราะ Windsurf จำ context ทั้ง repo ได้จริง",
-      color: "from-emerald-400 to-teal-500",
-    },
-  ],
-  bottom: [
-    {
-      name: "ทอม ดอร์",
-      handle: "@tom_doerr",
-      role: "Security Engineer",
-      avatar: "https://i.pravatar.cc/120?img=40",
-      quote:
-        "Windsurf เก่งเรื่อง lint และ test automation กว่า IDE อื่นที่ลองมา ช่วยปิด ticket audit ได้เร็วขึ้น",
-      color: "from-indigo-500 to-cyan-500",
-    },
-    {
-      name: "ลลักขณา เลอร์วิช",
-      handle: "@SecWillCheck",
-      role: "QA Lead",
-      avatar: "https://i.pravatar.cc/120?img=5",
-      quote:
-        "เราย้ายการตรวจ regression ทั้งหมดเข้า Windsurf แล้วให้ agent รัน test + แนะนำ fix เอง ประหยัดมาก",
-      color: "from-rose-500 to-orange-400",
-    },
-    {
-      name: "ขายยาวของในร้านของข้า",
-      handle: "@TheBodegaMan",
-      role: "Indie Hacker",
-      avatar: "https://i.pravatar.cc/120?img=48",
-      quote:
-        "Turbo mode ทำให้ปล่อยฟีเจอร์ prototype ภายในคืนเดียว เพราะ agent จัดการคำสั่ง terminal ให้หมด",
-      color: "from-amber-500 to-yellow-400",
-    },
-    {
-      name: "เออร่า",
-      handle: "@omsara0",
-      role: "Fullstack Dev",
-      avatar: "https://i.pravatar.cc/120?img=67",
-      quote:
-        "ผมใช้ Windsurf เขียนเอกสาร + อัพเดตคู่มือทีมกว่า 50 หน้าโดยสั่งเป็นภาษาไทยทั้งหมด ง่ายมาก",
-      color: "from-fuchsia-500 to-purple-600",
-    },
-  ],
-};
-
 export default function Home() {
   return (
     <main className="bg-white">
@@ -314,6 +313,31 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 space-y-10">
+          <div className="text-center space-y-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold">Buyer fit</p>
+            <h2 className="text-3xl font-bold text-gray-900">ก่อนสมัคร ลองเช็คว่า Windsurf เหมาะกับงานของคุณแค่ไหน</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">ส่วนนี้สรุปแบบเร็วสำหรับคนที่กำลังตัดสินใจว่าจะเริ่มจากแพ็กเกจไหน หรือควรใช้เครื่องมือแบบ workflow-first ตั้งแต่ตอนนี้หรือยัง</p>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {fitGuidance.map((group) => (
+              <div key={group.title} className="rounded-[28px] border border-gray-100 bg-white p-8 shadow-soft">
+                <h3 className="text-2xl font-semibold text-gray-900">{group.title}</h3>
+                <ul className="mt-5 space-y-3 text-gray-600 leading-relaxed">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-orange-500">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -432,6 +456,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
+        <p className="mt-4 text-sm text-gray-500">ตารางนี้ใช้เพื่อช่วยคัดกรองรูปแบบการใช้งานที่เหมาะกับแต่ละเครื่องมือ ไม่ใช่การตัดสินแบบ absolute และรายละเอียดจริงอาจเปลี่ยนได้ตามแพ็กเกจและเวอร์ชันล่าสุด</p>
       </section>
 
       <section className="pt-10 pb-16 md:py-20 bg-white">
@@ -483,78 +508,17 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-sm uppercase tracking-[0.3em] text-orange-500 font-semibold mb-3">Community perspectives</p>
-            <h2 className="text-3xl font-bold text-gray-900">มุมมองตัวอย่างจากรูปแบบการใช้งานที่หลายทีมสนใจ</h2>
-            <p className="mt-3 text-gray-600">การ์ดด้านล่างใช้เพื่อสะท้อน use case ที่ผู้ใช้มักคาดหวังจากการนำ AI IDE ไปใช้กับงานจริงในหลายบทบาท</p>
+            <h2 className="text-3xl font-bold text-gray-900">ตัวอย่างสถานการณ์ใช้งานที่ Windsurf มักถูกนำไปใช้</h2>
+            <p className="mt-3 text-gray-600">แทนที่จะอ้างผลลัพธ์แบบกว้าง ๆ ส่วนนี้สรุปเป็นสถานการณ์ใช้งานที่พบบ่อย เพื่อช่วยให้คุณเทียบกับ workflow ของตัวเองได้ตรงขึ้น</p>
           </div>
-
-          <div className="space-y-8 md:space-y-10">
-            <div className="marquee-row">
-              <div className="marquee-track">
-                {[...Array(2)].flatMap((_, loopIndex) =>
-                  testimonialRows.top.map((item, index) => (
-                    <div
-                      className="min-w-[280px] max-w-sm bg-white rounded-2xl shadow-soft border border-gray-100 p-5 flex flex-col gap-3"
-                      key={`${item.handle}-top-${loopIndex}-${index}`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${item.color} p-[2px]`}>
-                          <div className="w-full h-full rounded-full bg-white">
-                            <Image
-                              src={item.avatar}
-                              alt={item.name}
-                              width={48}
-                              height={48}
-                              className="w-full h-full rounded-full object-cover"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">{item.name}</p>
-                          <p className="text-sm text-gray-500">{item.handle}</p>
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-500">{item.role}</p>
-                      <p className="text-gray-700 leading-relaxed">“{item.quote}”</p>
-                    </div>
-                  ))
-                )}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {scenarioCards.map((item) => (
+              <div key={item.title} className="rounded-[28px] border border-gray-100 bg-white p-8 shadow-soft space-y-4">
+                <p className="text-sm uppercase tracking-[0.3em] text-orange-500">Use case</p>
+                <h3 className="text-2xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </div>
-            </div>
-
-            <div className="marquee-row">
-              <div className="marquee-track reverse">
-                {[...Array(2)].flatMap((_, loopIndex) =>
-                  testimonialRows.bottom.map((item, index) => (
-                    <div
-                      className="min-w-[280px] max-w-sm bg-white rounded-2xl shadow-soft border border-gray-100 p-5 flex flex-col gap-3"
-                      key={`${item.handle}-bottom-${loopIndex}-${index}`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${item.color} p-[2px]`}>
-                          <div className="w-full h-full rounded-full bg-white">
-                            <Image
-                              src={item.avatar}
-                              alt={item.name}
-                              width={48}
-                              height={48}
-                              className="w-full h-full rounded-full object-cover"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">{item.name}</p>
-                          <p className="text-sm text-gray-500">{item.handle}</p>
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-500">{item.role}</p>
-                      <p className="text-gray-700 leading-relaxed">“{item.quote}”</p>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
