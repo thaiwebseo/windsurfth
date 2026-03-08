@@ -292,11 +292,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         </div>
 
         {post.cta && (
-          <div className="rounded-[32px] bg-gradient-to-r from-orange-500 to-orange-400 text-white p-10 space-y-4 text-center">
+          <div className="rounded-[32px] bg-gradient-to-br from-orange-500 via-orange-500 to-amber-400 text-white p-8 md:p-10 space-y-5 text-center shadow-2xl shadow-orange-200/70 border border-orange-300/40">
             <p className="text-sm uppercase tracking-[0.35em] text-white/80">Ready to try?</p>
             <h3 className="text-3xl font-semibold">{post.cta.title}</h3>
-            <p className="text-white/80">{post.cta.description}</p>
-            <CTAButton source="blog-cta" className="mx-auto w-fit">
+            <p className="mx-auto max-w-2xl text-white/90">{post.cta.description}</p>
+            <div className="mx-auto w-fit rounded-2xl border border-white/35 bg-white/16 px-4 py-3 backdrop-blur-sm shadow-lg shadow-orange-600/20">
+              <p className="text-sm md:text-base font-semibold text-white">
+                พิเศษ! 250 เครดิตฟรีสำหรับแพ็คเกจ Pro ขึ้นไป เมื่อสมัครผ่านลิงก์นี้เท่านั้น
+              </p>
+            </div>
+            <CTAButton source="blog-cta" variant="outline" className="mx-auto w-fit border-0 bg-white text-orange-600 shadow-2xl shadow-orange-900/20 hover:bg-orange-50 hover:text-orange-700">
               สมัคร Pro รับเครดิต
             </CTAButton>
           </div>
