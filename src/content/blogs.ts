@@ -5,6 +5,7 @@ import { gpt54Post } from "./blogs/gpt-5-4-windsurf"
 import { gpt53CodexSparkPost } from "./blogs/gpt-5-3-codex-spark-windsurf"
 import { isWindsurfProWorthItPost } from "./blogs/is-windsurf-pro-worth-it"
 import { shouldYouSwitchFromCursorToWindsurfPost } from "./blogs/should-you-switch-from-cursor-to-windsurf"
+import { understandingThinkingModels } from "./blogs/understanding-thinking-models-and-context"
 import { windsurfGithubGuidePost } from "./blogs/windsurf-github-guide"
 import { windsurfVsClaudeCodePost } from "./blogs/windsurf-vs-claude-code"
 import { windsurfVsCursorForTeamsPost } from "./blogs/windsurf-vs-cursor-for-teams"
@@ -16,6 +17,7 @@ import { windsurfVsVSCodePost } from "./blogs/windsurf-vs-vscode"
 export { type BlogPost, type BlogSection } from "./blogs/types"
 
 export const blogPosts = [
+  understandingThinkingModels,
   shouldYouSwitchFromCursorToWindsurfPost,
   isWindsurfProWorthItPost,
   windsurfVsCursorForTeamsPost,
