@@ -4,7 +4,7 @@ export const understandingThinkingModels: BlogPost = {
   slug: "understanding-thinking-models-and-context-used",
   title: "คู่มือเลือก AI Model: รุ่น Thinking ต่างจากรุ่นธรรมดายังไง และ Context Used คืออะไร?",
   excerpt: "ทำความเข้าใจความแตกต่างระหว่าง AI Model รุ่นปกติ, รุ่น Thinking, และรุ่น 1M Context พร้อมวิธีเลือกใช้ให้คุ้มค่าเครดิตและเหมาะกับงานใน Windsurf IDE",
-  coverImage: "/images/blog/AI Model Thinking.webp", // ใช้รูป placeholder ไปก่อน หรือสามารถเปลี่ยนทีหลังได้
+  coverImage: "/images/blog/ai-model-thinking.webp", // ใช้รูป placeholder ไปก่อน หรือสามารถเปลี่ยนทีหลังได้
   date: "17 มีนาคม 2026", // ใช้วันที่ปัจจุบัน
   publishedAt: "2026-03-17T15:00:00+07:00",
   readingTime: "5 นาที",
