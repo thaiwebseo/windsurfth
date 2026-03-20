@@ -64,7 +64,7 @@ export const windsurfGithubGuidePost: BlogPost = {
   ],
   cta: {
     title: "เริ่มใช้ Windsurf + GitHub",
-    description: "สมัครแพ็คเกจ Pro เพื่อใช้ Fast Context, AI review และเครดิต 250 สำหรับการเชื่อมกับทีม",
+    description: "สมัครแพ็กเกจ Pro เพื่อใช้ Fast Context, AI review และปลดล็อกโควต้าการใช้งานระดับสูง",
   },
   faq: [
     {

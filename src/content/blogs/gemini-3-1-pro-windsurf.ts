@@ -46,6 +46,6 @@ export const gemini31ProPost: BlogPost = {
   ],
   cta: {
     title: "ลอง Gemini 3.1 Pro ผ่าน Windsurf",
-    description: "สมัครแพ็คเกจ Pro แล้วเปิดใช้งานโมเดลระดับองค์กรพร้อมรับ 250 เครดิตทันที",
+    description: "สมัครแพ็กเกจ Pro แล้วเปิดใช้งานโมเดลระดับองค์กรพร้อมโควต้ารีเซ็ตรายวัน",
   },
 }

@@ -46,6 +46,6 @@ export const glm5MinimaxPost: BlogPost = {
   ],
   cta: {
     title: "ปลดล็อกโมเดลเพิ่ม ผ่าน Windsurf",
-    description: "อัปเกรดแพ็คเกจ Pro เพื่อเปิดใช้ GLM-5, Minimax M2.5 และรับเครดิตเพิ่ม",
+    description: "อัปเกรดแพ็กเกจ Pro เพื่อเปิดใช้ GLM-5, Minimax M2.5 พร้อมโควต้าระดับ Standard ที่รีเซ็ตใหม่ทุกวัน",
   },
 }

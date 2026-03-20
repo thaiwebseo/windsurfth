@@ -133,7 +133,7 @@ export default function FAQPage() {
               หน้านี้รวบรวมคำถามสำคัญที่คนมักสงสัยก่อนเริ่มใช้งาน Windsurf ไม่ว่าจะเป็นเรื่องความคุ้มค่า การเลือกแพ็คเกจ ความต่างจากคู่แข่ง และแนวทางนำไปใช้กับงานจริง
             </p>
             <div className="flex flex-wrap gap-4">
-              <CTAButton source="faq-hero">สมัคร Pro รับเครดิต</CTAButton>
+              <CTAButton source="faq-hero">สมัคร Pro รับโบนัส</CTAButton>
               <Link
                 href="/pricing"
                 className="inline-flex items-center justify-center rounded-xl border border-orange-200 px-6 py-4 font-semibold text-orange-600 shadow-soft hover:-translate-y-0.5 transition-transform"

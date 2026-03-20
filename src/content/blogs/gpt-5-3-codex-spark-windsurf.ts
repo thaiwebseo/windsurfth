@@ -46,6 +46,6 @@ export const gpt53CodexSparkPost: BlogPost = {
   ],
   cta: {
     title: "ทดลอง GPT-5.3 Codex Spark",
-    description: "สมัครแพ็คเกจ Pro เพื่อใช้ Codex Spark พร้อมเครดิตเพิ่มสำหรับ workflow coding เต็มรูปแบบ",
+    description: "สมัครแพ็กเกจ Pro เพื่อใช้ Codex Spark พร้อมโควต้าระดับ Standard (Daily/Weekly) สำหรับ workflow coding เต็มรูปแบบ",
   },
 }

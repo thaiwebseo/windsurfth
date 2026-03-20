@@ -25,7 +25,7 @@ const ogImage = new URL("/images/hero/Windsurf%20AI%20IDE.png", siteUrl).toStrin
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะสำหรับโปรแกรมเมอร์ไทย",
-  description: "Windsurf IDE คือ AI coding assistant ที่ช่วยทีมไทยเขียนโค้ดเร็วขึ้น ทำงานกับ context ได้ลึกขึ้น และเริ่มต้น Pro ได้พร้อม 250 เครดิตฟรี",
+  description: "Windsurf IDE คือ AI coding assistant ที่ช่วยทีมไทยเขียนโค้ดเร็วขึ้น ทำงานกับ context ได้ลึกขึ้น พร้อมระบบโควต้ารีเซ็ตใหม่ทุกวัน",
   keywords: ["windsurf ไทย", "windsurf pro", "ai ide สำหรับโปรแกรมเมอร์ไทย", "windsurf ราคา", "windsurf features"],
   metadata: {
     alternates: { canonical },
@@ -147,10 +147,10 @@ const comparison = [
     copilot: "มักตอบโจทย์งาน completion และ assist แบบสั้นมากกว่า",
   },
   {
-    feature: "เครดิตพิเศษ 250 เมื่อสมัคร Pro",
-    windsurf: "มีผ่านลิงก์แนะนำของเว็บนี้สำหรับแพ็กเกจ Pro ขึ้นไป",
-    cursor: "ไม่มีข้อเสนอแบบเดียวกันในบริบทหน้านี้",
-    copilot: "ไม่มีข้อเสนอแบบเดียวกันในบริบทหน้านี้",
+    feature: "โบนัส $10 เมื่อสมัครเสียเงิน",
+    windsurf: "รับโบนัส Extra usage $10 เมื่อสมัคร Pro ขึ้นไปผ่านลิงก์แนะนำ",
+    cursor: "ไม่มีข้อเสนอโบนัสผ่านระบบบอกต่อในรูปแบบเดียวกัน",
+    copilot: "ไม่มีระบบโบนัสบอกต่อในปัจจุบัน",
   },
 ];
 
@@ -207,8 +207,8 @@ const faqs = [
     a: "Windsurf ไม่ใช่แค่ copilot หรือ agent ธรรมดา แต่เป็น 'AI flows' ที่ผสมคุณทั้งสองอย่าง คุณสามารถ collaborate กับ AI แบบ real-time ในขณะเดียวกัน ที่ AI สามารถทำงานอย่างอิสระเพื่องานที่ใหญ่ขึ้น",
   },
   {
-    q: "เครดิต 850 ใช้ทำอะไรได้?",
-    a: "ใช้ได้ราว 1 เดือนเต็ม หรือ 1-2 โปรเจกต์ ในแพ็คเกจ Pro สามารถใช้เปิดโควต้า AI command แบบเต็ม",
+    q: "ระบบโควต้าทำงานอย่างไร?",
+    a: "Windsurf ใช้ระบบโควต้ารายวันและรายสัปดาห์ (Daily & Weekly) โดยผู้ใช้จะได้เปอร์เซ็นต์โควต้าเต็มใหม่ทุกวัน หากใช้โควต้าเกินสามารถเติมเงิน (Pay-as-you-go) เฉพาะส่วนที่เกินได้",
   },
   {
     q: "Windsurf เหมาะกับทีมแบบไหน?",
@@ -260,7 +260,7 @@ const webPageSchema = {
     offers: {
       "@type": "Offer",
       category: "Pro Plan",
-      description: "สมัครแพ็กเกจ Pro ผ่านลิงก์ของเว็บไซต์เพื่อรับ 250 เครดิตฟรีเพิ่มเติม",
+      description: "สมัครแพ็กเกจเสียเงินผ่านลิงก์แนะนำของเว็บไซต์เพื่อรับโบนัส Extra usage มูลค่า $10",
     },
   },
 };
@@ -344,56 +344,61 @@ export default function Home() {
       <section id="pricing" className="pt-12 pb-14 md:py-20 bg-gradient-to-br from-orange-50 to-white">
         <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
           <div className="animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">แพ็คเกจ Pro สำหรับนักพัฒนาจริงจัง</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">แพ็กเกจ Pro และ Max สำหรับการใช้งานจริงจัง</h2>
             <p className="text-xl text-gray-600 mb-8">
-              ได้เครดิต AI command สูงสุด, Unlimited Chat, Memory ที่จำทั้ง codebase และ Priority Support ระดับ Pro
+              ได้โควต้าการใช้งาน AI สูงสุดที่รีเซ็ตทุกวัน เข้าถึงทุกโมเดลพรีเมียม และระบบเติมเงินยืดหยุ่น (Pay-as-you-go)
             </p>
             <ul className="space-y-4 text-gray-700 mb-8">
               <li className="flex items-start">
-                <span className="text-orange-500 mr-3">✓</span>
-                <span>รองรับ Context Window ขนาดใหญ่สำหรับโปรเจ็กต์ enterprise</span>
+                <span className="text-emerald-500 mr-3">✓</span>
+                <span>โควต้ารีเซ็ตใหม่ทุกวันและทุกสัปดาห์</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-emerald-500 mr-3">✓</span>
+                <span>ปลดล็อกโมเดลทั้งหมดรวมถึง SWE-1.5</span>
               </li>
               <li className="flex items-start">
                 <span className="text-orange-500 mr-3">✓</span>
-                <span>AI Agent ช่วยออกแบบ PR และรีวิวโค้ดแบบละเอียด</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-orange-500 mr-3">✓</span>
-                <span>รับ 250 เครดิตทันทีเมื่อสมัครผ่านลิงก์นี้</span>
+                <span>รับโบนัส $10 (Extra usage) เมื่อสมัครผ่านลิงก์นี้</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-4">
-              <CTAButton source="pricing-section">สมัคร Pro รับ 250 เครดิต</CTAButton>
+              <CTAButton source="pricing-section">อัปเกรดรับโบนัส $10</CTAButton>
               <a
                 href="#faq"
                 className="underline text-orange-600 font-semibold text-lg hover:text-orange-700 transition-colors"
               >
-                ดูคำถามที่พบบ่อย
+                ดูคำถามที่พบบ่อย ➜
               </a>
             </div>
           </div>
-          <div className="animate-scale-in">
-            <div className="bg-white rounded-3xl border border-orange-100 shadow-soft p-8 relative overflow-hidden">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl relative animate-fade-in-up">
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4">
+              <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Most Popular
+              </span>
+            </div>
+            <div className="mb-8 border-b border-gray-100 pb-8">
+              <div className="flex items-center gap-3 text-lg font-semibold text-gray-900">
                 <span>PRO</span>
-                <span className="bg-orange-100 text-orange-600 px-2 py-1 rounded-full">Popular</span>
+                <span className="bg-orange-100 text-orange-600 px-2 py-1 rounded-full">Standard Quota</span>
               </div>
-              <p className="text-sm text-gray-500 mt-3">ทดลองฟรี 14 วัน พร้อม 100 เครดิต</p>
-              <p className="text-6xl font-bold text-gray-900 mt-4">$15<span className="text-2xl font-medium text-gray-500">/เดือน</span></p>
-              <p className="text-gray-500 mt-1">หรือประมาณ 540 บาท/เดือน</p>
+              <p className="text-sm text-gray-500 mt-3">โควต้ารีเซ็ตรายวัน พร้อมเติมเงินได้</p>
+              <p className="text-6xl font-bold text-gray-900 mt-4">$20<span className="text-2xl font-medium text-gray-500">/เดือน</span></p>
+              <p className="text-gray-500 mt-1">หรือประมาณ 700 บาท/เดือน</p>
               <CTAButton
-                source="pricing-trial"
+                source="pricing-card"
                 variant="emerald"
                 className="w-full justify-center mt-6"
               >
-                เริ่มทดลองใช้งานฟรี + รับเครดิต
+                อัปเกรดเป็น Pro
               </CTAButton>
               <div className="mt-6 space-y-3 text-gray-700 text-sm">
-                <p>✓ รับเครดิต 500 prompt ต่อเดือนหลังจบช่วงทดลอง</p>
+                <p>✓ โควต้าระดับ Standard (Daily/Weekly)</p>
                 <p>✓ ใช้โมเดลระดับพรีเมียมทั้งหมด + SWE-1.5</p>
-                <p>✓ Full Fast Context และเพิ่มเครดิตเพิ่มได้ $10/250 เครดิต</p>
+                <p>✓ รองรับระบบเติมเงิน จ่ายตามการใช้จริง</p>
               </div>
-              <p className="text-xs text-gray-400 mt-8">* ทดลองฟรีสำหรับผู้ใช้ใหม่เท่านั้น</p>
             </div>
           </div>
         </div>

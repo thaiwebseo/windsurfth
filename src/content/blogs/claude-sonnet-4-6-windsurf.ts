@@ -46,6 +46,6 @@ export const claudeSonnet46Post: BlogPost = {
   ],
   cta: {
     title: "ใช้ Claude Sonnet 4.6 ผ่าน Windsurf",
-    description: "อัปเกรดเป็นแพ็คเกจ Pro รับเครดิตเพิ่มทันที พร้อมปรับ policy ให้ตอบโจทย์องค์กร",
+    description: "อัปเกรดเป็นแพ็กเกจ Pro ปลดล็อกโควต้าการใช้งานที่สูงขึ้น พร้อมเข้าถึงทุกโมเดลพรีเมียม",
   },
 }
