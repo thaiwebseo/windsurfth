@@ -52,7 +52,7 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
           <CTAButton source="hero-primary" className="btn-modern hover-glow shadow-modern">
-            สมัคร Pro รับ 250 เครดิตฟรี
+            รับเครดิตใช้งานเพิ่ม 10$ เมื่อสมัครใช้แพ็กเกจ Pro
           </CTAButton>
           <CTAButton source="hero-secondary" className="bg-white text-orange-600 border-2 border-orange-600 hover:bg-orange-50 shadow-soft hover-lift">
             ดูราคาแพ็คเกจ
