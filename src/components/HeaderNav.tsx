@@ -42,7 +42,7 @@ export function HeaderNav() {
               </a>
             ))}
             <CTAButton source="header-cta" className="!text-base !font-semibold !py-3 !px-6">
-              สมัคร Pro รับเครดิต
+              รับโบนัส $10
             </CTAButton>
           </nav>
 
@@ -71,7 +71,7 @@ export function HeaderNav() {
               </a>
             ))}
             <CTAButton source="header-cta-mobile" className="w-full justify-center">
-              สมัคร Pro รับเครดิต
+              รับโบนัส $10
             </CTAButton>
           </div>
         )}

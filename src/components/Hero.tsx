@@ -34,7 +34,7 @@ export function Hero() {
         <div className="mb-8 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-6 py-3 rounded-full mb-6 shadow-soft hover-lift">
             <Sparkles className="w-5 h-5 animate-pulse-slow" />
-            <span className="text-sm font-semibold">🎉 พิเศษ! 250 เครดิตฟรีสำหรับแพ็คเกจ Pro ขึ้นไป</span>
+            <span className="text-sm font-semibold">🎉 พิเศษ! รับโบนัส Extra usage $10 เมื่ออัปเกรดเป็นแพ็กเกจ Pro</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
@@ -104,7 +104,7 @@ export function Hero() {
             <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
             <p className="text-orange-600 font-semibold">🔥 ข้อเสนอสำหรับผู้ใช้ใหม่เท่านั้น</p>
           </div>
-          <p className="text-sm text-gray-500">สมัครใหม่ตอนนี้รับทันที 250 + 500 + 100 เครดิต (~850) ใช้ได้ราว 1 เดือนเต็ม หรือ 1-2 โปรเจกต์ ในแพ็คเกจ Pro</p>
+          <p className="text-sm text-gray-500">สมัครแพ็กเกจเสียเงินผ่านลิงก์นี้ รับโบนัสมูลค่า $10 สำหรับใช้เติมโควต้าใช้งาน AI ต่อเนื่องไม่สะดุด</p>
         </div>
       </div>
     </section>
