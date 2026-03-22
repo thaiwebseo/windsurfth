@@ -4,6 +4,7 @@ import { glm5MinimaxPost } from "./blogs/glm-5-minimax-m2-5-windsurf"
 import { gpt54Post } from "./blogs/gpt-5-4-windsurf"
 import { gpt53CodexSparkPost } from "./blogs/gpt-5-3-codex-spark-windsurf"
 import { isWindsurfProWorthItPost } from "./blogs/is-windsurf-pro-worth-it"
+import { bestPracticeWindsurfPost } from "./blogs/best-practice-windsurf"
 import { newWindsurfPricingPlansPost } from "./blogs/new-windsurf-pricing-plans"
 import { shouldYouSwitchFromCursorToWindsurfPost } from "./blogs/should-you-switch-from-cursor-to-windsurf"
 import { understandingThinkingModels } from "./blogs/understanding-thinking-models-and-context"
@@ -18,6 +19,7 @@ import { windsurfVsVSCodePost } from "./blogs/windsurf-vs-vscode"
 export { type BlogPost, type BlogSection } from "./blogs/types"
 
 export const blogPosts = [
+  bestPracticeWindsurfPost,
   newWindsurfPricingPlansPost,
   understandingThinkingModels,
   shouldYouSwitchFromCursorToWindsurfPost,
