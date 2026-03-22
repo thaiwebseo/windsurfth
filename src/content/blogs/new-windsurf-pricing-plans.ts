@@ -55,6 +55,37 @@ export const newWindsurfPricingPlansPost: BlogPost = {
       heading: "แผนราคาใหม่มีอะไรบ้าง?",
       body:
         "เรากำลังอัปเดตแผนราคาเป็นดังนี้ และแผนใหม่จะมีผลในวันพฤหัสบดีที่ 19 มีนาคม 2026",
+      table: {
+        headers: ["Free", "Pro", "Teams", "Max (NEW)"],
+        rows: [
+          ["$0 / เดือน", "$20 / เดือน", "$40 / ที่นั่ง / เดือน", "$200 / เดือน"],
+          ["-", "ได้ทุกอย่างใน Free เพิ่มเติม:", "ได้ทุกอย่างใน Pro เพิ่มเติม:", "ได้ทุกอย่างใน Pro เพิ่มเติม:"],
+          [
+            "Light quota สำหรับการเขียนโค้ดด้วย agents",
+            "โควต้าที่มากขึ้น รวมถึงการเข้าถึงโมเดล frontier จาก OpenAI, Claude และ Gemini",
+            "Centralized billing",
+            "โควต้าที่สูงขึ้นอย่างมีนัยสำคัญ",
+          ],
+          [
+            "การเข้าถึงโมเดลแบบจำกัด",
+            "ใช้งานโมเดลได้ครบทั้งหมด",
+            "Admin dashboard พร้อม analytics",
+            "Priority support",
+          ],
+          [
+            "Unlimited inline edits",
+            "ซื้อ extra usage ได้ในราคา API pricing",
+            "Priority support",
+            "-",
+          ],
+          [
+            "Unlimited Tab Completions",
+            "-",
+            "Automated zero data retention",
+            "-",
+          ],
+        ],
+      },
       bullets: [
         "Free: $0 / เดือน - Light quota สำหรับการเขียนโค้ดด้วย agents, มี model availability แบบจำกัด, ใช้ inline edits ได้ไม่จำกัด และใช้ Tab Completions ได้ไม่จำกัด",
         "Pro: $20 / เดือน - ได้ทุกอย่างใน Free พร้อมโควต้าที่มากขึ้น, เข้าถึงโมเดล frontier จาก OpenAI, Claude และ Gemini, ใช้โมเดลได้ครบทั้งหมด และสามารถซื้อ extra usage ได้ในราคา API pricing",
@@ -66,6 +97,27 @@ export const newWindsurfPricingPlansPost: BlogPost = {
       heading: "แพ็กเกจของฉันมี usage limits เท่าไร?",
       body:
         "ปริมาณการใช้ usage จะขึ้นอยู่กับความซับซ้อนของงานและโมเดลที่คุณเลือกใช้ งานอย่างสคริปต์ง่าย ๆ จะใช้ allowance น้อยมาก ในขณะที่ codebase ขนาดใหญ่หรือ session ที่ยาวและมี context มากจะใช้ต่อข้อความสูงกว่า ต่อไปนี้คือค่าประมาณจำนวนข้อความที่คุณอาจคาดว่าจะได้ใช้งาน",
+      table: {
+        headers: ["", "Pro and Teams", "Max"],
+        rows: [
+          [
+            "Premium Plus (Opus 4.6, GPT-5.4, GPT-5.3-Codex)",
+            "7–27 ข้อความ / วัน",
+            "42–170 ข้อความ / วัน",
+          ],
+          [
+            "Premium (เช่น Sonnet 4.6, GPT-5.2, Gemini Pro)",
+            "8–101 ข้อความ / วัน",
+            "47–631 ข้อความ / วัน",
+          ],
+          [
+            "Lightweight (เช่น Haiku, Flash)",
+            "47–190 ข้อความ / วัน",
+            "291–1,190 ข้อความ / วัน",
+          ],
+        ],
+        note: "usage limits เหล่านี้อ้างอิงจากกรอบเวลาแบบรายวัน และยังมี weekly limit เพิ่มเติมอีกชั้นหนึ่ง โดยค่าประมาณทั้งหมดอิงจากรูปแบบการใช้งานในปัจจุบัน",
+      },
       bullets: [
         "Premium Plus (เช่น Opus 4.6, GPT-5.4, GPT-5.3-Codex): Pro และ Teams ประมาณ 7–27 ข้อความต่อวัน, Max ประมาณ 42–170 ข้อความต่อวัน",
         "Premium (เช่น Sonnet 4.6, GPT-5.2, Gemini Pro): Pro และ Teams ประมาณ 8–101 ข้อความต่อวัน, Max ประมาณ 47–631 ข้อความต่อวัน",

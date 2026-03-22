@@ -3,11 +3,18 @@ export interface BlogSectionImage {
   alt: string
 }
 
+export interface BlogSectionTable {
+  headers: string[]
+  rows: string[][]
+  note?: string
+}
+
 export interface BlogSection {
   heading: string
   body: string
   bullets?: string[]
   image?: BlogSectionImage
+  table?: BlogSectionTable
 }
 
 export interface BlogFaqItem {

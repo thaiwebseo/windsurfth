@@ -369,6 +369,33 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                     <Image src={section.image.src} alt={section.image.alt} fill className="object-cover" />
                   </div>
                 )}
+                {section.table && (
+                  <div className="overflow-x-auto rounded-[28px] border border-gray-200 bg-white shadow-sm">
+                    <table className="min-w-full text-left text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          {section.table.headers.map((header) => (
+                            <th key={header} className="px-4 py-3 font-semibold text-gray-900 border-b border-gray-200 whitespace-pre-line align-top">
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.table.rows.map((row, rowIndex) => (
+                          <tr key={`${section.heading}-${rowIndex}`} className="border-b border-gray-100 last:border-b-0">
+                            {row.map((cell, cellIndex) => (
+                              <td key={`${section.heading}-${rowIndex}-${cellIndex}`} className="px-4 py-4 text-gray-600 whitespace-pre-line align-top">
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+                {section.table?.note && <p className="text-sm italic leading-relaxed text-gray-500">{section.table.note}</p>}
                 {section.bullets && (
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
                     {section.bullets.map((bullet) => (
