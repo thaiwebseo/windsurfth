@@ -10,6 +10,14 @@ export const understandingThinkingModels: BlogPost = {
   readingTime: "5 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Tips", "AI Models", "Context", "Claude", "Gemini", "Pro"],
+  keywords: [
+    "Thinking model คืออะไร",
+    "Context Used คืออะไร",
+    "เลือก AI model ใน Windsurf",
+    "Claude Thinking vs Regular",
+    "Gemini context window",
+    "ใช้โควต้า Windsurf ให้คุ้ม",
+  ],
   heroHighlight: "ทำความรู้จักโมเดล Thinking ที่คิดก่อนตอบ ตัวเลขทวีคูณราคา (API Price) ตอนเลือกโมเดล และทำความเข้าใจแถบ Context Used ที่หลายคนสงสัยว่าคืออะไรและสำคัญอย่างไร",
   sections: [
     {

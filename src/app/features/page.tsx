@@ -232,7 +232,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 space-y-4">
             <p className="text-sm uppercase tracking-[0.4em] text-white/70">พร้อมลองแล้วหรือยัง?</p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">เริ่มทดลอง Pro ฟรี 14 วัน พร้อมรับ 250 เครดิตเมื่ออัปเกรด</h2>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">เริ่มทดลอง Pro ฟรี 14 วัน พร้อมรับโบนัสใช้งานเพิ่ม $10 เมื่อสมัครผ่านลิงก์เรา</h2>
             <p className="text-white/80">
               ผูกลิงก์ repository, ตั้งค่า workflow แรก และให้เอเจนต์ดูแล backlog ของคุณได้ภายใน 15 นาที ไม่ต้องย้ายเครื่องมือที่ใช้อยู่
             </p>

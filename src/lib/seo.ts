@@ -8,7 +8,7 @@ export const BASE_KEYWORDS = [
   "ai coding assistant",
   "เครื่องมือเขียนโค้ด",
   "ide ภาษาไทย",
-  "windsurf 250 เครดิต",
+  "windsurf โบนัส $10",
   "สมัคร windsurf pro",
 ]
 
@@ -17,6 +17,10 @@ interface MetadataOptions {
   description: string
   keywords?: string[]
   metadata?: Partial<Metadata>
+}
+
+function mergeKeywords(...keywordGroups: string[][]) {
+  return Array.from(new Set(keywordGroups.flat().filter(Boolean)))
 }
 
 export function buildPageMetadata({ title, description, keywords = [], metadata = {} }: MetadataOptions): Metadata {
@@ -28,7 +32,7 @@ export function buildPageMetadata({ title, description, keywords = [], metadata 
   return {
     title,
     description,
-    keywords: [...BASE_KEYWORDS, ...keywords],
+    keywords: mergeKeywords(BASE_KEYWORDS, keywords),
     ...metadata,
     alternates: {
       ...existingAlternates,
@@ -43,14 +47,14 @@ export function buildPageMetadata({ title, description, keywords = [], metadata 
 export function buildBlogMetadata({
   title,
   description,
-  tags = [],
+  keywords = [],
   metadata = {},
 }: {
   title: string
   description: string
-  tags?: string[]
+  keywords?: string[]
   metadata?: Partial<Metadata>
 }): Metadata {
-  const blogKeywords = ["บทความ windsurf", "คู่มือ windsurf", "ai ide blog", ...tags]
+  const blogKeywords = ["บทความ windsurf", "คู่มือ windsurf", "ai ide blog", ...keywords]
   return buildPageMetadata({ title, description, keywords: blogKeywords, metadata })
 }

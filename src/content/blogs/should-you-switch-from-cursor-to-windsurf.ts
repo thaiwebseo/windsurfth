@@ -11,6 +11,14 @@ export const shouldYouSwitchFromCursorToWindsurfPost: BlogPost = {
   readingTime: "9 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "Cursor", "Migration", "Comparison"],
+  keywords: [
+    "ย้ายจาก Cursor มา Windsurf",
+    "Cursor vs Windsurf",
+    "ควรเปลี่ยนจาก Cursor ไหม",
+    "migration ไป Windsurf",
+    "Windsurf แทน Cursor",
+    "AI IDE สำหรับ workflow ซับซ้อน",
+  ],
   heroHighlight:
     "ถ้าคุณใช้ Cursor อยู่แล้วและเริ่มรู้สึกว่าการใช้ AI แบบเดิมยังไม่พอ บทความนี้จะช่วยให้คุณประเมินอย่างตรงไปตรงมาว่าควรย้ายจาก Cursor มา Windsurf ไหม",
   sections: [

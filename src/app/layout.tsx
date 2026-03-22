@@ -49,7 +49,7 @@ const websiteSchema = {
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะสำหรับโปรแกรมเมอร์ไทย",
-  description: "Windsurf IDE คือ AI coding assistant ที่ทรงพลังที่สุด พร้อมรับเครดิตใช้งานเพิ่ม 10$ เมื่อสมัครใช้แพ็กเกจ Pro",
+  description: "Windsurf IDE คือ AI coding assistant ที่ทรงพลังที่สุด พร้อมรับโบนัสใช้งานเพิ่ม $10 เมื่อสมัครแพ็กเกจ Pro",
   keywords: ["windsurf ไทย", "สมัคร windsurf", "ai ide ภาษาไทย"],
   metadata: {
     metadataBase: new URL(siteUrl),
@@ -63,7 +63,7 @@ export const metadata: Metadata = buildPageMetadata({
     },
     openGraph: {
       title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะ",
-      description: "AI coding assistant ที่ทรงพลังที่สุด พร้อมรับเครดิตใช้งานเพิ่ม 10$ เมื่อสมัครใช้แพ็กเกจ Pro",
+      description: "AI coding assistant ที่ทรงพลังที่สุด พร้อมรับโบนัสใช้งานเพิ่ม $10 เมื่อสมัครแพ็กเกจ Pro",
       url: siteUrl,
       siteName: "Windsurf Thailand",
       locale: "th_TH",
@@ -80,7 +80,7 @@ export const metadata: Metadata = buildPageMetadata({
     twitter: {
       card: "summary_large_image",
       title: "Windsurf AI IDE - เครื่องมือเขียนโค้ดอัจฉริยะ",
-      description: "AI coding assistant ที่ทรงพลังที่สุด พร้อมรับเครดิตใช้งานเพิ่ม 10$ เมื่อสมัครใช้แพ็กเกจ Pro",
+      description: "AI coding assistant ที่ทรงพลังที่สุด พร้อมรับโบนัสใช้งานเพิ่ม $10 เมื่อสมัครแพ็กเกจ Pro",
       images: [defaultOgImage],
     },
     ...(googleVerification && {

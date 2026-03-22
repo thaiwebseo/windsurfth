@@ -25,7 +25,7 @@ function createSectionId(heading: string) {
 function getIntentCta(post: (typeof blogPosts)[number]) {
   if (post.tags.includes("Pricing") || post.tags.includes("Commercial") || post.tags.includes("Pro")) {
     return {
-      primaryLabel: "สมัคร Pro รับเครดิต",
+      primaryLabel: "สมัคร Pro รับโบนัส $10",
       secondaryLabel: "ดูราคาและเทียบแพ็กเกจ",
       secondaryHref: "/pricing",
       note: "เหมาะกับบทความที่ผู้อ่านกำลังประเมินความคุ้มค่า ราคา และความต่างของแต่ละแพ็กเกจ",
@@ -34,7 +34,7 @@ function getIntentCta(post: (typeof blogPosts)[number]) {
 
   if (post.tags.includes("Comparison") || post.tags.includes("Cursor") || post.tags.includes("Migration")) {
     return {
-      primaryLabel: "สมัคร Pro รับเครดิต",
+      primaryLabel: "สมัคร Pro รับโบนัส $10",
       secondaryLabel: "ดูฟีเจอร์ที่ต่างกันชัดขึ้น",
       secondaryHref: "/features",
       note: "เหมาะกับผู้อ่านที่กำลังเปรียบเทียบเครื่องมือหรือคิดเรื่องการย้าย workflow",
@@ -42,7 +42,7 @@ function getIntentCta(post: (typeof blogPosts)[number]) {
   }
 
   return {
-    primaryLabel: "สมัคร Pro รับเครดิต",
+    primaryLabel: "สมัคร Pro รับโบนัส $10",
     secondaryLabel: "ดูบทความและคำแนะนำเพิ่มเติม",
     secondaryHref: "/blog",
     note: "เหมาะกับผู้อ่านที่ยังอยู่ในช่วงศึกษา use case และต้องการข้อมูลต่อก่อนตัดสินใจ",
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return buildBlogMetadata({
     title: `${post.title} | Windsurf Blog`,
     description: post.excerpt,
-    tags: post.tags,
+    keywords: post.keywords,
     metadata: {
       alternates: {
         canonical,
@@ -180,7 +180,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     datePublished: post.publishedAt,
     dateModified: updatedAt,
     inLanguage: "th-TH",
-    keywords: post.tags.join(", "),
+    keywords: post.keywords.join(", "),
     articleSection: post.tags,
     wordCount: post.sections.reduce((count, section) => count + section.body.split(/\s+/).filter(Boolean).length, 0),
     author: {
@@ -419,7 +419,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             </div>
             <div className="mx-auto w-fit rounded-2xl border border-white/35 bg-white/16 px-4 py-3 backdrop-blur-sm shadow-lg shadow-orange-600/20">
               <p className="text-sm md:text-base font-semibold text-white">
-                พิเศษ! 250 เครดิตฟรีสำหรับแพ็คเกจ Pro ขึ้นไป เมื่อสมัครผ่านลิงก์นี้เท่านั้น
+                พิเศษ! รับโบนัสใช้งานเพิ่ม $10 เมื่อสมัครแพ็กเกจ Pro ผ่านลิงก์นี้
               </p>
             </div>
             <div className="mx-auto flex w-full max-w-2xl flex-wrap items-center justify-center gap-4">

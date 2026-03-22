@@ -11,6 +11,14 @@ export const windsurfVsCursorForTeamsPost: BlogPost = {
   readingTime: "9 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "Cursor", "Teams", "Comparison"],
+  keywords: [
+    "Windsurf vs Cursor for Teams",
+    "Cursor for Teams vs Windsurf",
+    "AI IDE สำหรับทีม",
+    "เปรียบเทียบ Windsurf กับ Cursor ทีม",
+    "ทีมควรใช้ Windsurf หรือ Cursor",
+    "workflow scale สำหรับทีม dev",
+  ],
   heroHighlight:
     "คำถามสำคัญของทีมไม่ใช่แค่ Windsurf vs Cursor อันไหนดีกว่า แต่คือเครื่องมือไหนจะ scale การใช้ AI ของทีมได้จริง โดยไม่เพิ่ม complexity และ friction ในระยะยาว",
   sections: [

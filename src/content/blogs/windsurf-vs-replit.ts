@@ -11,6 +11,14 @@ export const windsurfVsReplitPost: BlogPost = {
   readingTime: "8 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "Replit", "AI IDE", "Comparison"],
+  keywords: [
+    "Windsurf vs Replit",
+    "Replit vs Windsurf",
+    "เปรียบเทียบ Windsurf กับ Replit",
+    "AI IDE vs cloud development",
+    "Replit alternative สำหรับ dev team",
+    "desktop AI IDE",
+  ],
   heroHighlight:
     "ถ้าคุณกำลังตัดสินใจระหว่าง Windsurf vs Replit ประเด็นสำคัญไม่ใช่แค่ว่าใครมี AI ดีกว่า แต่คือคุณต้องการ desktop-first AI IDE หรือ cloud-first development platform กันแน่",
   sections: [

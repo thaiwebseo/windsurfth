@@ -11,6 +11,14 @@ export const windsurfVsCursorPost: BlogPost = {
   readingTime: "8 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "Cursor", "AI IDE", "Comparison"],
+  keywords: [
+    "Windsurf vs Cursor",
+    "Cursor vs Windsurf",
+    "เปรียบเทียบ Windsurf กับ Cursor",
+    "Windsurf หรือ Cursor ดี",
+    "AI IDE ตัวไหนดี 2026",
+    "Windsurf ต่างจาก Cursor ยังไง",
+  ],
   heroHighlight: "ถ้าคุณกำลังลังเลระหว่าง Windsurf กับ Cursor บทความนี้ช่วยแยกให้เห็นชัดว่าจุดต่างอยู่ตรง workflow และรูปแบบการทำงานที่รองรับ",
   sections: [
     {

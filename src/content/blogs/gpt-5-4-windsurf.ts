@@ -11,6 +11,14 @@ export const gpt54Post: BlogPost = {
   readingTime: "8 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["GPT-5.4", "OpenAI", "AI Model"],
+  keywords: [
+    "GPT-5.4",
+    "GPT-5.4 OpenAI",
+    "GPT-5.4 ใน Windsurf",
+    "GPT-5.4 reasoning",
+    "OpenAI model สำหรับเขียนโค้ด",
+    "GPT-5.4 ดีขึ้นยังไง",
+  ],
   heroHighlight: "โมเดลใหม่ของ OpenAI เน้นทั้งความฉลาด ความแม่น และประสิทธิภาพต่อ token สำหรับงานจริงระดับมืออาชีพ",
   sections: [
     {

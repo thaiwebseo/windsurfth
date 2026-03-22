@@ -31,6 +31,7 @@ export interface BlogPost {
   readingTime: string
   author: string
   tags: string[]
+  keywords: string[]
   heroHighlight: string
   publishedAt: string
   sections: BlogSection[]

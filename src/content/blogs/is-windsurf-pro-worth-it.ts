@@ -11,6 +11,14 @@ export const isWindsurfProWorthItPost: BlogPost = {
   readingTime: "8 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "Pricing", "Pro", "Commercial"],
+  keywords: [
+    "Windsurf Pro คุ้มไหม",
+    "ควรอัปเกรด Windsurf Pro ไหม",
+    "ราคา Windsurf Pro",
+    "Windsurf Pro รีวิว",
+    "เปรียบเทียบ Free กับ Pro Windsurf",
+    "ROI ของ Windsurf Pro",
+  ],
   heroHighlight:
     "คำถามว่า Windsurf Pro คุ้มไหม ควรตอบจากลักษณะงานและผลลัพธ์ที่คุณคาดหวัง ไม่ใช่ดูแค่ราคาต่อเดือน เพราะมูลค่าที่แท้จริงของ AI IDE อยู่ที่ workflow ที่มันช่วยให้คุณทำได้เร็วและลึกขึ้น",
   sections: [

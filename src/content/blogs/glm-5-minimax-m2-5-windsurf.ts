@@ -11,6 +11,14 @@ export const glm5MinimaxPost: BlogPost = {
   readingTime: "4 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["GLM-5", "Minimax", "AI Models"],
+  keywords: [
+    "GLM-5 Windsurf",
+    "Minimax M2.5 Windsurf",
+    "โมเดลใหม่ใน Windsurf",
+    "AI model จีนใน Windsurf",
+    "โมเดล multimodal ใน Windsurf",
+    "วิธีใช้ GLM-5 และ Minimax M2.5",
+  ],
   heroHighlight: "เลือกระหว่างโมเดลจีนที่เก่ง reasoning และโมเดลมัลติโมดัลสำหรับ content",
   sections: [
     {

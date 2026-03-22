@@ -11,6 +11,14 @@ export const newWindsurfPricingPlansPost: BlogPost = {
   readingTime: "6 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Pricing", "Windsurf", "Quota", "Pro", "Max"],
+  keywords: [
+    "ราคา Windsurf ใหม่",
+    "Windsurf pricing plans",
+    "Windsurf Pro ราคา",
+    "Windsurf Max ราคา",
+    "quota รายวัน รายสัปดาห์ Windsurf",
+    "extra usage คืออะไร Windsurf",
+  ],
   heroHighlight:
     "Windsurf ปรับราคาใหม่โดยเปลี่ยนจากระบบเครดิตไปเป็นโควต้ามาตรฐานแบบรายวันและรายสัปดาห์ พร้อมเปิดตัวแพ็กเกจ Max และระบบ extra usage สำหรับผู้ใช้ที่ต้องการใช้งานต่อหลังโควต้าหมด",
   sections: [

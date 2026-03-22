@@ -110,7 +110,7 @@ export default function AboutPage() {
               Windsurf Thailand ถูกสร้างขึ้นเพื่อช่วยให้ผู้ใช้ในไทยเข้าใจ Windsurf IDE ได้เร็วขึ้น ทั้งในมุมของฟีเจอร์ ราคา การใช้งานจริง และแนวทางประยุกต์กับ workflow ของทีมพัฒนาและทีมงานสมัยใหม่
             </p>
             <div className="flex flex-wrap gap-4">
-              <CTAButton source="about-hero">สมัคร Pro รับเครดิต</CTAButton>
+              <CTAButton source="about-hero">สมัคร Pro รับโบนัส $10</CTAButton>
               <TrackedLink
                 href="/blog"
                 className="inline-flex items-center justify-center rounded-xl border border-orange-200 px-6 py-4 font-semibold text-orange-600 shadow-soft hover:-translate-y-0.5 transition-transform"

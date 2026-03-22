@@ -112,7 +112,7 @@ export default function ContactPage() {
               ถ้าคุณกำลังตัดสินใจเรื่องแพ็คเกจ ฟีเจอร์ หรืออยากเริ่มใช้ Windsurf ให้คุ้มตั้งแต่วันแรก หน้านี้คือจุดเริ่มต้นที่ดี เรารวมทั้งช่องทางติดต่อและลิงก์สำคัญที่ช่วยให้คุณไปต่อได้เร็วขึ้น
             </p>
             <div className="flex flex-wrap gap-4">
-              <CTAButton source="contact-hero">สมัคร Pro รับเครดิต</CTAButton>
+              <CTAButton source="contact-hero">สมัคร Pro รับโบนัส $10</CTAButton>
               <TrackedAnchor
                 href="mailto:hello@windsurfth.com"
                 className="inline-flex items-center justify-center rounded-xl border border-orange-200 px-6 py-4 font-semibold text-orange-600 shadow-soft hover:-translate-y-0.5 transition-transform"

@@ -11,6 +11,14 @@ export const gemini31ProPost: BlogPost = {
   readingTime: "6 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Gemini 3.1 Pro", "โมเดลใหม่", "AI IDE"],
+  keywords: [
+    "Gemini 3.1 Pro Windsurf",
+    "Gemini 3.1 Pro ใน Windsurf",
+    "วิธีเปิดใช้ Gemini 3.1 Pro",
+    "Gemini สำหรับเขียนโค้ด",
+    "Google Gemini ใน Windsurf",
+    "Gemini 3.1 Pro Fast Context",
+  ],
   heroHighlight: "สลับใช้โมเดลจาก Google ได้โดยไม่ต้องเปลี่ยน workflow เดิม",
   sections: [
     {

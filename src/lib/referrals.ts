@@ -10,7 +10,7 @@ export interface ReferralOptions {
 export function getReferralLink({
   source = "website",
   medium = "cta",
-  campaign = "250credits",
+  campaign = "bonus10",
   extraParams = {},
 }: ReferralOptions = {}) {
   const url = new URL(REFERRAL_LINK)

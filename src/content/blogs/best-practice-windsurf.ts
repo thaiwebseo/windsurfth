@@ -11,6 +11,14 @@ export const bestPracticeWindsurfPost: BlogPost = {
   readingTime: "5 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Tips", "Windsurf", "Best Practices", "Workflow", "AI IDE"],
+  keywords: [
+    "best practice windsurf",
+    "วิธีใช้ Windsurf ให้ได้ผลดี",
+    "ตั้งค่า Windsurf ให้ AI เขียนโค้ดตรงใจ",
+    "วิธีเขียน .windsurfrules",
+    "วิธีใช้ @mention ใน Windsurf",
+    "Code Ask Plan ต่างกันยังไง",
+  ],
   heroHighlight:
     "ถ้าคุณอยากให้ Windsurf เขียนโค้ดได้ตรงใจมากขึ้น ไม่ใช่แค่พิมพ์ prompt เก่ง แต่ต้องวาง context ให้ชัด เลือกโหมดให้ถูก และทำงานร่วมกับ AI แบบเป็นระบบ",
   sections: [

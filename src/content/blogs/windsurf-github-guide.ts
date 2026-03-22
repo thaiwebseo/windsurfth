@@ -11,6 +11,14 @@ export const windsurfGithubGuidePost: BlogPost = {
   readingTime: "7 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["GitHub", "Git", "Windsurf"],
+  keywords: [
+    "เชื่อม Windsurf กับ GitHub",
+    "ใช้ git ใน Windsurf",
+    "git push ใน Windsurf",
+    "วิธีตั้งค่า GitHub กับ Windsurf",
+    "คำสั่ง git init commit push",
+    "Windsurf GitHub guide",
+  ],
   heroHighlight: "มีทั้งขั้นตอนเชื่อมต่อและคำสั่ง git ครบ จัดการโค้ดผ่าน Windsurf ได้ทันที",
   sections: [
     {

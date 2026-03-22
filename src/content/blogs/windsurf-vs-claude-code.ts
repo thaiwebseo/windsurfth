@@ -11,6 +11,14 @@ export const windsurfVsClaudeCodePost: BlogPost = {
   readingTime: "9 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "Claude Code", "AI IDE", "Comparison"],
+  keywords: [
+    "Windsurf vs Claude Code",
+    "Claude Code vs Windsurf",
+    "เปรียบเทียบ Windsurf กับ Claude Code",
+    "Claude Code ดีไหม",
+    "AI IDE เทียบ Claude Code",
+    "เครื่องมือ AI coding สำหรับ workflow",
+  ],
   heroHighlight:
     "ถ้าคุณกำลังเปรียบเทียบ Windsurf vs Claude Code บทความนี้จะช่วยแยกให้ชัดว่าจุดต่างจริง ๆ อยู่ที่ product philosophy, workflow และระดับของงานที่คุณต้องการให้ AI ช่วยทำ",
   sections: [

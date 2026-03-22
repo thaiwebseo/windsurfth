@@ -11,6 +11,14 @@ export const windsurfVsGithubCopilotPost: BlogPost = {
   readingTime: "8 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "GitHub Copilot", "AI IDE", "Comparison"],
+  keywords: [
+    "Windsurf vs GitHub Copilot",
+    "GitHub Copilot vs Windsurf",
+    "เปรียบเทียบ Windsurf กับ Copilot",
+    "Copilot หรือ Windsurf",
+    "AI IDE มากกว่า autocomplete",
+    "GitHub Copilot alternative",
+  ],
   heroHighlight: "ถ้าคุณรู้สึกว่า autocomplete อย่างเดียวไม่พออีกต่อไป บทความนี้จะช่วยให้เห็นชัดว่าทำไม Windsurf กับ GitHub Copilot ให้ประสบการณ์ต่างกันมาก",
   sections: [
     {

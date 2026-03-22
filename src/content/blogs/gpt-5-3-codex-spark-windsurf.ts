@@ -11,6 +11,14 @@ export const gpt53CodexSparkPost: BlogPost = {
   readingTime: "5 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["GPT-5.3", "Codex Spark", "AI Coding"],
+  keywords: [
+    "GPT-5.3 Codex Spark Windsurf",
+    "Codex Spark คืออะไร",
+    "GPT-5.3 สำหรับเขียนโค้ดใน Windsurf",
+    "OpenAI Codex Spark",
+    "วิธีเปิดใช้ GPT-5.3 ใน Windsurf",
+    "โมเดล AI coding ใน Windsurf",
+  ],
   heroHighlight: "เติมเต็ม pair programming ให้ GPT ช่วยแนะนำโค้ดพร้อมอธิบาย logic เป็นภาษาไทย",
   sections: [
     {

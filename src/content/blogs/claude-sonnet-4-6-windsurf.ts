@@ -11,6 +11,15 @@ export const claudeSonnet46Post: BlogPost = {
   readingTime: "5 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Claude", "Sonnet 4.6", "AI IDE"],
+  keywords: [
+    "Claude Sonnet 4.6 Windsurf",
+    "Claude Sonnet 4.6",
+    "วิธีใช้ Claude Sonnet 4.6 ใน Windsurf",
+    "Claude Sonnet 4.6 สำหรับเขียนโค้ด",
+    "Claude model ใน Windsurf",
+    "Claude Sonnet reasoning model",
+    "เปิดใช้ Claude Sonnet 4.6 ยังไง",
+  ],
   heroHighlight: "ควบคุมสไตล์การตอบและ policy ได้ละเอียด ทั้งยังรองรับข้อมูลภายในองค์กร",
   sections: [
     {

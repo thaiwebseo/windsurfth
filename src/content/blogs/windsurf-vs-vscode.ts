@@ -11,6 +11,14 @@ export const windsurfVsVSCodePost: BlogPost = {
   readingTime: "9 นาที",
   author: "ทีม Windsurf Thailand",
   tags: ["Windsurf", "VS Code", "AI IDE", "Comparison"],
+  keywords: [
+    "Windsurf vs VS Code",
+    "VS Code vs Windsurf",
+    "เปรียบเทียบ Windsurf กับ VS Code",
+    "AI IDE vs editor",
+    "ควรใช้ Windsurf หรือ VS Code",
+    "VS Code สำหรับ AI coding",
+  ],
   heroHighlight:
     "คำถาม Windsurf vs VS Code ไม่ได้เป็นแค่การเทียบฟีเจอร์ แต่เป็นการเทียบว่าคุณควรใช้ editor แบบเดิมต่อ หรือขยับไปสู่ AI IDE ที่ถูกออกแบบมาสำหรับ workflow ยุคใหม่",
   sections: [

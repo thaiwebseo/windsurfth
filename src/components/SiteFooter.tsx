@@ -43,7 +43,7 @@ export function SiteFooter() {
               source="footer-cta"
               className="!text-base !font-semibold !py-3 !px-6 bg-gradient-to-r from-orange-500 to-orange-400 shadow-lg shadow-orange-500/30"
             >
-              รับเครดิตเพิ่ม $10
+              รับโบนัสเพิ่ม $10
             </CTAButton>
           </div>
         </div>
