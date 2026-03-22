@@ -12,17 +12,15 @@ const primaryNavItems = [
   { label: "ราคา", href: "/pricing" },
   { label: "จุดเด่น", href: "/features" },
   { label: "บทความ", href: "/blog" },
-  { label: "เกี่ยวกับเรา", href: "/about" },
-  { label: "ติดต่อ", href: "/contact" },
-  { label: "FAQs", href: "/faq" },
 ];
 
 const navGroups = [
   {
-    label: "เริ่มต้นใช้งาน",
+    label: "เริ่มต้น",
     items: [
       { label: "Windsurf คืออะไร", href: "/what-is-windsurf", description: "รู้จักภาพรวมและแนวคิดของ Windsurf" },
       { label: "เริ่มต้นใช้ Windsurf", href: "/guides/getting-started", description: "คู่มือสำหรับมือใหม่และทีมที่อยากเริ่มให้ถูกทาง" },
+      { label: "คำถามที่พบบ่อย", href: "/faq", description: "สรุปคำตอบเรื่องราคา ฟีเจอร์ และการเริ่มต้นใช้งาน" },
     ],
   },
   {
@@ -30,6 +28,13 @@ const navGroups = [
     items: [
       { label: "Best Practice", href: "/blog/best-practice-windsurf", description: "ปรับการใช้งานให้ AI ตอบตรงใจและลดการอธิบายซ้ำ" },
       { label: "เชื่อม Windsurf กับ GitHub", href: "/blog/windsurf-github-guide", description: "เริ่มใช้ Windsurf กับโปรเจกต์จริงและ workflow ของทีม" },
+    ],
+  },
+  {
+    label: "เพิ่มเติม",
+    items: [
+      { label: "เกี่ยวกับเรา", href: "/about", description: "ทำความรู้จักเว็บไซต์และแนวทางการอธิบาย Windsurf สำหรับผู้ใช้ไทย" },
+      { label: "ติดต่อ", href: "/contact", description: "ติดต่อสอบถามเรื่องการใช้งาน แพ็กเกจ หรือแนวทางเริ่มต้น" },
     ],
   },
 ];
@@ -40,19 +45,19 @@ export function HeaderNav() {
   return (
     <header className="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-orange-100/60 shadow-[0_4px_20px_rgba(255,107,53,0.05)]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-18">
           <Link href="/" className="flex items-center" aria-label="กลับไปหน้าแรก" onClick={() => trackEvent({ action: "nav_click", category: "navigation", label: "logo_home" })}>
             <Image
               src="/images/icons/windsurf-black-wordmark.svg"
               alt="Windsurf Thailand"
-              width={120}
-              height={28}
+              width={104}
+              height={24}
               priority
-              className="h-7 w-auto"
+              className="h-6 w-auto"
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
             {primaryNavItems.map((item) => (
               <a key={item.href} href={item.href} className="hover:text-orange-600 transition-colors" onClick={() => trackEvent({ action: "nav_click", category: "navigation", label: `desktop_${item.href}` })}>
                 {item.label}
@@ -83,7 +88,7 @@ export function HeaderNav() {
                 </div>
               </div>
             ))}
-            <CTAButton source="header-cta" className="!text-base !font-semibold !py-3 !px-6">
+            <CTAButton source="header-cta" className="!text-sm !font-semibold !py-2.5 !px-5">
               รับโบนัส $10
             </CTAButton>
           </nav>
