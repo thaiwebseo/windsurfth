@@ -267,19 +267,19 @@ const webPageSchema = {
 
 const intentLinks = [
   {
+    title: "Windsurf คืออะไร",
+    href: "/what-is-windsurf",
+    description: "เหมาะสำหรับคนที่อยากเข้าใจภาพรวมของ Windsurf และดูว่ามันต่างจาก AI coding tools แบบเดิมอย่างไร",
+  },
+  {
+    title: "เริ่มต้นใช้ Windsurf",
+    href: "/guides/getting-started",
+    description: "เหมาะสำหรับมือใหม่ที่อยากเริ่มให้ถูกทาง ตั้งแต่เลือกแพ็กเกจไปจนถึง workflow แรก",
+  },
+  {
     title: "ดูราคาและแพ็กเกจ",
     href: "/pricing",
     description: "เหมาะสำหรับคนที่กำลังเปรียบเทียบ Free, Pro และ Teams ก่อนตัดสินใจสมัคร",
-  },
-  {
-    title: "ดูฟีเจอร์ทั้งหมด",
-    href: "/features",
-    description: "เหมาะสำหรับคนที่ต้องการเข้าใจว่า Windsurf ช่วย workflow แบบไหนได้จริงบ้าง",
-  },
-  {
-    title: "อ่านบทความเชิงลึก",
-    href: "/blog",
-    description: "เหมาะสำหรับคนที่อยากอ่าน how-to, comparison และอัปเดต AI IDE ภาษาไทย",
   },
   {
     title: "ดูคำถามที่พบบ่อย",

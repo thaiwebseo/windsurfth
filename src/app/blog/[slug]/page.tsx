@@ -118,7 +118,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   const coverUrl = new URL(post.coverImage, siteUrl).toString()
   const encodedUrl = encodeURIComponent(canonicalUrl)
   const encodedText = encodeURIComponent(post.title)
-  const updatedAt = post.publishedAt
+  const updatedAt = post.updatedAt ?? post.publishedAt
+  const updatedDateLabel = new Intl.DateTimeFormat("th-TH", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(updatedAt))
   const intentCta = getIntentCta(post)
   const quickSummary = getQuickSummary(post)
   const tocItems = post.sections.map((section) => ({
@@ -299,7 +304,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               <div className="sm:text-right">
                 <p className="text-sm font-semibold text-gray-900">อัปเดตล่าสุด</p>
                 <time dateTime={updatedAt} className="text-sm text-gray-600">
-                  {post.date}
+                  {updatedDateLabel}
                 </time>
               </div>
             </div>

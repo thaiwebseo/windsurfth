@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: ["/", "/about", "/contact", "/faq", "/features", "/pricing", "/blog", "/blog/", "/terms", "/privacy"],
+      allow: ["/", "/about", "/contact", "/faq", "/features", "/pricing", "/blog", "/blog/", "/what-is-windsurf", "/guides/getting-started", "/terms", "/privacy"],
       disallow: ["/api/", "/dashboard", "/account", "/admin", "/settings", "/_next/", "/static/"],
     },
     sitemap: sitemapUrl,

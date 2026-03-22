@@ -34,6 +34,7 @@ export interface BlogPost {
   keywords: string[]
   heroHighlight: string
   publishedAt: string
+  updatedAt?: string
   sections: BlogSection[]
   cta?: {
     title: string
