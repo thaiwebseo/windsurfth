@@ -371,7 +371,15 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 <p className="leading-relaxed text-gray-600">{section.body}</p>
                 {section.image && (
                   <div className="relative w-full h-[320px] rounded-[28px] overflow-hidden border border-orange-100 shadow-lg shadow-orange-100/40">
-                    <Image src={section.image.src} alt={section.image.alt} fill className="object-cover" />
+                    <Image src={section.image.src} alt={section.image.alt} fill className="object-contain" />
+                  </div>
+                )}
+                {section.video && (
+                  <div className="overflow-hidden rounded-[28px] border border-orange-100 bg-black shadow-lg shadow-orange-100/40">
+                    <video className="w-full h-auto" controls playsInline preload="metadata">
+                      <source src={section.video.src} type="video/mp4" />
+                      {section.video.title}
+                    </video>
                   </div>
                 )}
                 {section.table && (

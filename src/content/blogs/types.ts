@@ -3,6 +3,11 @@ export interface BlogSectionImage {
   alt: string
 }
 
+export interface BlogSectionVideo {
+  src: string
+  title: string
+}
+
 export interface BlogSectionTable {
   headers: string[]
   rows: string[][]
@@ -14,6 +19,7 @@ export interface BlogSection {
   body: string
   bullets?: string[]
   image?: BlogSectionImage
+  video?: BlogSectionVideo
   table?: BlogSectionTable
 }
 

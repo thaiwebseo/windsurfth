@@ -8,6 +8,7 @@ import { bestPracticeWindsurfPost } from "./blogs/best-practice-windsurf"
 import { newWindsurfPricingPlansPost } from "./blogs/new-windsurf-pricing-plans"
 import { shouldYouSwitchFromCursorToWindsurfPost } from "./blogs/should-you-switch-from-cursor-to-windsurf"
 import { understandingThinkingModels } from "./blogs/understanding-thinking-models-and-context"
+import { windsurfAdaptiveUpdatePost } from "./blogs/windsurf-adaptive-update"
 import { windsurfGithubGuidePost } from "./blogs/windsurf-github-guide"
 import { windsurfVsClaudeCodePost } from "./blogs/windsurf-vs-claude-code"
 import { windsurfVsCursorForTeamsPost } from "./blogs/windsurf-vs-cursor-for-teams"
@@ -15,10 +16,13 @@ import { windsurfVsCursorPost } from "./blogs/windsurf-vs-cursor"
 import { windsurfVsGithubCopilotPost } from "./blogs/windsurf-vs-github-copilot"
 import { windsurfVsReplitPost } from "./blogs/windsurf-vs-replit"
 import { windsurfVsVSCodePost } from "./blogs/windsurf-vs-vscode"
+import { windsurfTwoPointZeroUpdatePost } from "./blogs/windsurf-2-0-update"
 
 export { type BlogPost, type BlogSection } from "./blogs/types"
 
 export const blogPosts = [
+  windsurfTwoPointZeroUpdatePost,
+  windsurfAdaptiveUpdatePost,
   bestPracticeWindsurfPost,
   newWindsurfPricingPlansPost,
   understandingThinkingModels,
