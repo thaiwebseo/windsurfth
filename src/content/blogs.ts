@@ -1,3 +1,4 @@
+import { gpt55ResearchReportPost } from "./blogs/gpt-5-5-research-report"
 import { gemini31ProPost } from "./blogs/gemini-3-1-pro-windsurf"
 import { claudeSonnet46Post } from "./blogs/claude-sonnet-4-6-windsurf"
 import { glm5MinimaxPost } from "./blogs/glm-5-minimax-m2-5-windsurf"
@@ -21,6 +22,7 @@ import { windsurfTwoPointZeroUpdatePost } from "./blogs/windsurf-2-0-update"
 export { type BlogPost, type BlogSection } from "./blogs/types"
 
 export const blogPosts = [
+  gpt55ResearchReportPost,
   windsurfTwoPointZeroUpdatePost,
   windsurfAdaptiveUpdatePost,
   bestPracticeWindsurfPost,

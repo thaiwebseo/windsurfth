@@ -264,7 +264,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
   return (
     <main className="bg-white py-20">
-      <article className="max-w-4xl mx-auto px-4 space-y-12">
+      <article className="max-w-[1120px] mx-auto px-4 space-y-12">
         <nav aria-label="Breadcrumb" className="text-sm text-gray-500">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
@@ -330,12 +330,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </div>
         </header>
 
-        <div className="relative w-full min-h-[220px] h-[34vw] max-h-[500px] rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
+        <div className="w-full rounded-[32px] overflow-hidden shadow-2xl shadow-orange-100">
           <Image
             src={post.coverImage}
             alt={`${post.title} - ภาพประกอบบทความ Windsurf`}
-            fill
-            className="object-contain"
+            width={1200}
+            height={630}
+            className="w-full h-auto"
             priority
           />
         </div>
@@ -370,8 +371,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 <h2 className="text-2xl font-semibold text-gray-900">{section.heading}</h2>
                 <p className="leading-relaxed text-gray-600">{section.body}</p>
                 {section.image && (
-                  <div className="relative w-full h-[320px] rounded-[28px] overflow-hidden border border-orange-100 shadow-lg shadow-orange-100/40">
-                    <Image src={section.image.src} alt={section.image.alt} fill className="object-contain" />
+                  <div className="w-full rounded-[28px] overflow-hidden border border-orange-100 shadow-lg shadow-orange-100/40">
+                    <Image src={section.image.src} alt={section.image.alt} width={1200} height={630} className="w-full h-auto" />
                   </div>
                 )}
                 {section.video && (
